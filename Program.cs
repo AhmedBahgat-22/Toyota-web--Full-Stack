@@ -39,4 +39,6 @@ using (var scope = app.Services.CreateScope())
     db.Database.Migrate();
 }
 
-app.Run();
+// Get the port from Render, or default to 5113 if running locally
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5113";
+app.Run($"http://0.0.0.0:{port}");
