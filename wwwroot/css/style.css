@@ -1,0 +1,1699 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    height: 11300px;
+    font-family: 'Avenir Next', 'Inter', -apple-system, sans-serif;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    height: 55px;
+    background-color: #FFFFFF ;
+    z-index: 20;
+}
+
+.header  img {
+    margin-top: 13px;
+    width: 40px;
+    height: 30px;
+    float:left ;
+    margin-left: 150px;
+}
+
+.header_title{
+
+ float:left ;
+ margin-left: 80px;
+ width: 150px;
+ height: 25px;  
+ border-radius: 20px; 
+ border: 1px solid rgb(22, 21, 21);
+ margin-top: 17px;
+ padding-left: 40px;
+
+}
+
+.search_icon {
+    display: block;
+    position: absolute;
+    color: #000000;
+    font-size: 15px;
+    margin-left: 285px ;
+    cursor: pointer;
+       
+}
+
+
+.search_icon  i {
+
+  line-height: 60px;
+
+
+
+}
+
+.list {      
+    margin-top: 20px; 
+    margin-right: 270px;
+    list-style: none;
+    float:right ;
+}
+
+.list  li {
+
+    display: inline-block;
+    margin-left: 80px;
+    
+}
+
+
+ .list  li   a {
+     text-decoration: none;
+      color: #000000;
+     position: relative; 
+     padding-bottom: 5px;
+}
+
+
+
+.list li a::after {
+    content: ""; 
+    position: absolute; 
+    
+    left: 0; 
+    bottom: 0; 
+    
+    /* شكل الخط: */
+    height: 3px; 
+    background-color: #EB0A1E;
+    border-radius: 10px; 
+    
+    width: 0; 
+    
+    transition:  0.3s ; 
+}
+
+
+.list li a:hover::after {
+    width: 100%; 
+}
+
+
+/* 1. تجهيز الأب (Service) عشان القائمة تنزل تحته */
+.dropdown_parent {
+    position: relative;
+}
+
+.dropdown_menu {
+    position: absolute;
+    top: 100%;    /*  انزلي اقفي تحت الأب بالظبط */          
+    left: -15px;   
+    width: 180px; 
+    background-color: #FFFFFF;
+    border: 1px solid rgb(22, 21, 21);
+    border-radius: 15px;
+    visibility: hidden; 
+    z-index: 19;
+}
+
+ 
+/*  a و  li  و ul  و  div  لو الكلمة مفيش قبلها نقطة: ده معناه إنك بتدور على "تاج  اساسي من بتوع اللغه زي ال */
+
+.list .dropdown_menu li {
+
+    display: block; 
+    
+    margin-left: 0; /*بنلغي الـ 80 بيكسل عشان ميهربوش بره الصندوق */
+   
+    margin-top: 15px;
+    
+    margin-bottom: 15px; 
+
+    text-align: center;
+}
+
+.dropdown_parent:hover .dropdown_menu {
+    visibility: visible;
+}
+
+
+
+    /* /////////////////////////////////// Section 2 ////////////////////////////////-->*/
+
+.home {
+
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* view height */
+    background-image: url(../images/photo1.jpg);
+    
+    background-repeat: no-repeat ;
+    background-position: center  ; 
+    background-size: cover;
+    text-align: center;
+}
+
+
+.home-overlay {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.6)  ;
+
+}
+
+.home-parent {
+    width: 100%;
+
+    /* hero image */
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+
+
+
+.home-title1 {
+    font-size: 50px;
+    letter-spacing: 2px;
+    text-transform:capitalize;
+    color:#fff;
+}
+
+.home-p1 {
+    letter-spacing: 1.5px;
+    color:  #FFFFFF;
+    margin: 20px 0px;
+    font-size: 17px;
+}
+
+
+
+.home-btn {
+    width: 150px;
+    height: 44px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-size: 18px;
+}
+
+
+
+.home-btn2 {
+    background-color: #EB0A1E;
+    color: #fff;
+    margin-left: 12px;
+}
+
+.home-btn:hover {
+    opacity: 0.5 ;
+}
+
+
+
+    /* /////////////////////////////////// Section 3 ////////////////////////////////-->*/
+
+
+.title3{
+         
+        margin-top: 500px;
+        text-align: center;
+        font-size: 45px ;
+ }
+
+ .line{
+      
+        background-color: #EB0A1E;
+        width: 280px;
+        height: 5px;
+        margin-top: 50px;
+        margin: auto;
+
+ }
+
+
+
+ 
+
+.parent {
+    overflow: auto;
+    margin-top: 150px;
+    margin-left: -140px;
+}
+
+
+.div1  {
+
+    width: 450px;
+    height: 300px;
+    border: 3px  solid #EB0A1E;
+    border-radius: 10px;
+
+    text-align: center;
+    margin-left: 350px ;
+    float: left;
+    position: relative;
+
+
+
+}
+
+
+.div2 {
+     width: 450px;
+    height: 300px;
+    border: 3px  solid #EB0A1E;
+    border-radius: 10px;
+
+    float: left;
+
+    margin: 0px  70px;
+    text-align: center;
+    position: relative;
+
+
+}
+
+.div3 {
+     width: 450px;
+    height: 300px;
+    border: 3px  solid #EB0A1E;
+    border-radius: 10px;
+
+
+    float: left;
+
+    text-align: center;
+    position: relative;
+
+   
+}
+
+.btn10 {
+    width: 150px;
+    height: 30px;
+    border: 0;
+    background-color:#EB0A1E;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn10:hover{
+
+opacity: 0.7;
+}
+
+.wrench_icon{
+display: block;
+font-size: 30px;
+color: #000000;
+padding-top: 20px;
+}
+
+
+.title10{
+padding-top: 20px;
+font-size: 30px;
+
+
+
+}
+
+
+.p10{
+
+font-size: 20px;
+padding: 50px 0;
+
+}
+
+
+.div1::after{
+
+content: "";
+position: absolute;
+
+
+width: 0;
+height: 25%;
+
+
+top: 0;
+left: 0;
+
+background-color:#EB0A1E;
+opacity: 1;
+z-index: -1;
+
+}
+
+
+.div1:hover::after{
+
+width: 100%;
+height: 100%;
+
+ opacity: 0.5;
+transition: 1s;
+
+}
+
+
+.div1:hover .title10{
+
+color: #fff;
+transition: 1s;
+
+
+
+}
+
+.div2::after{
+
+content: "";
+position: absolute;
+
+
+width: 0;
+height: 25%;
+
+
+top: 0;
+left: 0;
+
+background-color:#EB0A1E;
+opacity: 1;
+z-index: -1;
+
+}
+
+
+.div2:hover::after{
+
+width: 100%;
+height: 100%;
+
+ opacity: 0.5;
+transition: 1s;
+
+}
+
+
+.div2:hover .title10{
+
+color: #fff;
+transition: 1s;
+
+
+
+}
+
+
+.div3::after{
+
+content: "";
+position: absolute;
+
+
+width: 0;
+height: 25%;
+
+
+top: 0;
+left: 0;
+
+background-color:#EB0A1E;
+opacity: 1;
+z-index: -1;
+
+}
+
+
+.div3:hover::after{
+
+width: 100%;
+height: 100%;
+
+ opacity: 0.5;
+transition: 1s;
+
+}
+
+
+.div3:hover .title10{
+
+color: #fff;
+transition: 1s;
+
+
+
+}
+    /* ///////////////////////////////////Section 4  ////////////////////////////////--> */
+
+.background{
+
+margin-top: 600px;
+width:100% ;
+height: 1200px;
+background:linear-gradient(180deg, #FFFFFF 0%, #EAEAEA 100%);
+position: relative;
+
+
+}
+.title_section4 {
+    padding-top: 80px;
+    font-size: 38px;
+    color: #222222;
+    font-weight: 800; /* عشان الكلمة تكون عريضة وواضحة زي الصورة */
+    text-align: center;
+}
+
+.line_section4 {
+    width: 130px; /* كبرنا العرض شوية عشان يكون متناسق مع الكلمة زي الصورة */
+    height: 4px; /* زودنا السُمك سنة بسيطة */
+    background-color: #cc0000; /* درجة الأحمر المطلوبة */
+    margin: auto;
+    margin-top: 12px; /* ظبطنا المسافة بين الكلمة والخط */
+    border-radius: 10px; /* دي أهم حتة عشان تخلي حواف الخط ناعمة ودائرية */
+}
+
+
+.team-container {
+    width: 70%;
+    margin: auto;
+}
+.team-parent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-item {
+    flex: 0 0 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    padding: 0;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.team-item-2 {
+    flex: 0 0 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    padding: 0;
+    text-align: center;
+    margin-top: 60px;
+}
+.team-img{
+    position: relative;
+    overflow: hidden;
+}
+
+.team-img img{
+    width: 100%;
+    height: 250px;   /* خلي كل الصور نفس الارتفاع */
+    object-fit: cover;
+    display: block;
+}
+
+.team-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.5);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+
+.team-item:hover .team-overlay{
+    opacity: 1;
+    visibility: visible;
+}
+
+.information1{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+
+.team-info-title{
+    font-size: 20px;
+    text-transform: capitalize;
+    color:#fff;
+}
+
+.team-info-p {
+    letter-spacing: 0.5px;
+    color: #dcdcdc;
+    margin: 20px 0px;
+    font-size: 17px;
+}
+
+
+.div-icon{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+
+.div-icon a i {
+     font-size: 23px;
+     color: #FFFFFF;
+     margin-left: 15px;
+
+
+
+}
+
+
+
+    /* ///////////////////////////////////-Section5 ////////////////////////////////*/
+
+
+
+
+    .title_section5{
+
+    padding-top: 300px;
+    font-size: 35px;
+    color: #000000;
+    text-align: center;
+
+
+}
+
+
+
+.line_section5{
+
+    width: 150px;
+    height: 5px;
+    background-color:#EB0A1E;
+    margin: auto;
+    margin-top: 15px;
+    /* margin-bottom: 250px; */
+
+
+}
+
+
+
+
+
+.team-container-offer{
+
+    width: 70%;
+    margin: auto;
+    /* background-color: #EB0A1E; */
+    /* height: 200px; */
+    
+}
+.team-parent-offer{
+    overflow: auto;
+   
+}
+
+
+
+.offer{
+
+border: 2px solid  #EB0A1E;
+/* width: 350px; */
+height: 200px;
+float: left;
+/* padding: 18px  14px; */
+
+width: 30%;
+
+margin-top: 100px;
+position: relative;
+/* z-index: 1; */
+
+}
+
+.offer-offer2{
+  margin: 0px  5%;
+  margin-top: 100px;
+
+}
+
+
+.wrench_icon2{
+
+/* display: block; */
+
+font-size: 35px;
+
+color: #EB0A1E;
+
+padding-left: 20px;
+}
+
+
+.wrench_icon2  i {
+
+line-height: 60px;
+
+}
+
+
+.offer_title{
+display: inline-block;
+padding-left: 20px;
+/* float: left; */
+
+}
+
+
+
+.offer_p{
+
+text-align: center;
+
+margin: 20px 10px;
+
+
+
+
+}
+
+
+
+.offer::after{
+
+content: "";
+position: absolute;
+
+width: 25%;
+height: 0;
+
+
+top: 0;
+left: 0;
+
+
+background-color: #EB0A1E;
+opacity: 0;
+z-index: -1;
+}
+
+
+
+.offer:hover::after{
+
+      width: 100%;
+      height: 100%;
+      opacity: 0.5;
+      transition: 0.8s;
+
+
+
+
+}
+
+
+
+.offer:hover .offer_title{
+
+
+    color: #FFFFFF;
+}
+
+
+
+.offer:hover .offer_p{
+
+
+    color: #FFFFFF;
+}
+
+
+
+
+    /* ///////////////////////////////////-Section6 ////////////////////////////////*/
+
+
+.choose-section {
+    margin-top: 250px;
+    overflow: auto; 
+}
+
+.left-content {
+    float: left;
+    width: 650px;
+    margin-left: 250px;
+}
+
+.choosing-title {
+    font-size: 35px;
+}
+
+.line-chossing {
+    width: 70px;
+    height: 3px;
+    background-color: #EB0A1E;
+    margin-top: 10px;
+}
+
+.chosse-p {
+    margin-top: 50px;
+    letter-spacing: 1.5px;
+    text-transform: capitalize;
+    line-height: 1.6;
+}
+
+.span_chosse {
+    margin-top: 50px;
+}
+
+.list-item {
+    margin-bottom: 30px; 
+    overflow: auto;
+}
+
+.io {
+    display: block;
+    float: left;
+    margin-right: 20px;
+    margin-top: 4px; 
+}
+
+.list-item p {
+    overflow: auto; 
+}
+
+.right-content {
+    float: left;
+    margin-left: 270px; 
+    margin-top: 100px; 
+}
+
+.img-no1 {
+    display: block;
+     
+}
+
+.dots-container {
+    text-align: center; 
+    margin-top: 20px;
+}
+
+.dot {
+    display: inline-block; 
+    width: 12px;
+    height: 12px;
+    margin-left: 4px; 
+    margin-right: 4px;
+    border: 2px solid #333;
+    border-radius: 50%; 
+    cursor: pointer;
+}
+
+.active {
+    background-color: #EB0A1E;
+    border-color: #EB0A1E;
+}
+
+
+.dot:hover{
+
+    background-color: #EB0A1E;
+    border-color: #EB0A1E;
+
+
+}
+
+    /* ///////////////////////////////////-Section7 ////////////////////////////////*/
+
+
+.photo-section{
+    margin-top: 500px;
+    width: 100%;
+    height: 500px;
+    background-image: url(../images/land\ crusier.jpg);
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover; 
+    background-attachment: fixed;
+    position: relative;
+}
+
+
+
+.section-overlay{
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(0, 0, 0, 0.4)  ;
+}
+
+.container-section{
+
+position: absolute;
+width: 90%;
+height: 400px;
+top: 50%;
+left: 50%;
+transform: translate(-50% , -50%);
+
+/* background-color: #EB0A1E; */
+
+}
+
+.parent-section{
+overflow: auto;
+
+}
+
+
+.stat-item{
+
+    float: left;
+    width: 22.5%;
+    text-align: center;
+    padding-top: 5%;
+    margin-left: 2%;
+    /* padding: 100px  150px; */
+
+}
+
+
+
+.stat-icon{
+
+font-size: 40px;
+color:#EB0A1E;
+
+
+}
+
+
+
+.stat-number{
+
+font-size: 40px;
+color: #FFFFFF;
+margin: 20px 0px;
+
+
+}
+
+.stat-text{
+
+font-size: 40px;
+color:#FFFFFF;
+margin-top: 20px;
+letter-spacing: 1.5px;
+
+
+
+
+}
+
+
+
+    /* /////////////////////////////////// Section 8 ////////////////////////////////-->*/
+
+
+.pricing-table-title {
+    margin-top: 150px; 
+    text-align: center;
+    font-size: 35px;
+    color: #000000;
+    text-transform: capitalize;
+}
+
+.pricing-table-line {
+    margin: auto;
+    width: 100px;
+    height: 3px;
+    background-color: #EB0A1E;
+    margin-top: 20px;
+}
+
+.pricing-table-parent {
+    overflow: auto;
+    margin-top: 80px;
+    width: 90%; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pricing-card {
+    background-color: #FFFFFF;
+    width: 31%;
+    margin: 0 1.1%; 
+    padding: 60px 0; 
+    text-align: center;
+    border: 2px solid #EB0A1E;
+    border-radius: 15px;
+    float: left;
+    position: relative;
+    transition: 0.3s;
+    z-index: 2;
+}
+
+.center-card {
+    background-color: #1a1a1a;
+    border: 2px solid #EB0A1E;
+   
+}
+
+.pricing-card .pricing-table-title2 {
+    font-size: 28px;
+    color: #000000;
+}
+
+.center-card .pricing-table-title2 {
+    color: #FFFFFF;
+}
+
+.inside1 {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid #EB0A1E;
+    margin: 40px auto;
+    transition: 0.3s;
+}
+
+.pricing-card:hover .inside1 {
+    background-color: #EB0A1E;
+}
+
+.dolar1 {
+    color: #EB0A1E;
+    padding-top: 55px;
+    font-size: 28px;
+    transition: 0.3s;
+}
+
+.pricing-card:hover .dolar1 {
+    color: #FFFFFF;
+}
+
+/* نصوص التفاصيل */
+.pricing-table-title3 {
+    padding: 15px 20px;
+    font-size: 18px;
+    color: #333333;
+}
+
+.pricing-table-title4, 
+.pricing-table-title5 {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #666666;
+}
+
+.center-card .pricing-table-title3 {
+    color: #FFFFFF;
+}
+.center-card .pricing-table-title4, 
+.center-card .pricing-table-title5 {
+    color: #cccccc;
+}
+
+/* زر الشراء */
+.pricing-table-button1 {
+    width: 200px;
+    height: 45px;
+    margin-top: 30px;
+    background-color: #FFFFFF;
+    border: 2px solid #EB0A1E;
+    border-radius: 8px;
+    color: #EB0A1E;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.pricing-table-button1:hover {
+    background-color: #EB0A1E;
+    color: #FFFFFF;
+}
+
+.center-card .pricing-table-button1 {
+    background-color: #EB0A1E;
+    color: #FFFFFF;
+}
+
+.center-card .pricing-table-button1:hover {
+    background-color: #FFFFFF;
+    color: #EB0A1E;
+    border-color: #FFFFFF;
+}
+
+.center-card:hover{
+background-color: #FFFFFF;
+
+
+
+}
+
+.center-card:hover .pricing-table-title3{
+
+color: #000000;
+
+
+}
+
+.pricing-card::after{
+position: absolute;
+content: "";
+
+width: 100%;
+height: 0;
+
+
+top: 0;
+left: 0;
+
+
+background-color:#EB0A1E;
+opacity: 0.5;
+z-index: -2;
+transition: 2s;
+
+}
+
+.pricing-card:hover::after{
+width: 100%;
+height: 100%;
+opacity: 0.2;
+
+}
+
+
+
+
+    /* /////////////////////////////////// Section 9 ////////////////////////////////-->*/
+
+.photo-section-8 {
+    margin-top: 500px;
+    width: 100%;
+    height: 500px; 
+    background-image: url(../images/supera.jpg);
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover; 
+    background-attachment: fixed;
+    position: relative;
+}
+
+.section-overlay-8 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.parent-section-8 {
+
+    overflow: auto;
+    margin-top: 150px;
+    width: 100%; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div-section-8 {
+    float: left;
+    width: 40%; 
+    margin-left: 10%; 
+    text-align: left;  
+    color: #FFFFFF; 
+}
+
+/* --- الحاوية الجديدة اللي بتلم الصورة والكلام --- */
+.profile-header {
+    overflow: auto;
+    margin-bottom: 15px;
+}
+
+.photo-backgroud-1, 
+.photo-backgroud-2 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    float: left; 
+}
+
+.photo-backgroud-1 {
+    background-image: url(../images/Kiichiro_Toyoda.jpg);
+    background-size: cover; 
+}
+
+.photo-backgroud-2 {
+    background-image: url(../images/Sakichi\ Toyoda.jpg);
+    background-size: cover; 
+    background-position: center; 
+}
+
+.profile-text {
+    float: left; 
+    margin-left: 20px;
+    margin-top: 15px; 
+}
+
+.name {
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.position {
+
+    margin: 20px 0px;
+    display: block; 
+    color: #1e1e9c;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: capitalize;
+}
+
+.introuduce {
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    color: #f1f1f1;
+    width: 70%;
+    margin-left: 20px;
+}
+
+
+
+
+    /* /////////////////////////////////// Section 10 ////////////////////////////////-->*/
+
+
+
+
+    
+ .Toyoda-title {
+    font-size: 42px;
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 200px;
+    margin-bottom: 20px ;
+
+ }
+
+ .Toyoda-line {
+    width: 90px;
+    height: 4px;
+    background-color: #EB0A1E;
+    margin: auto;
+
+    margin-bottom: 92px ;
+ }
+ .Toyoda-container {
+    width: 80%;
+    margin:auto ;
+ }
+
+ .Toyoda-parent {
+    overflow: auto;
+ }
+
+
+ .Toyoda-item {
+    float: left;
+    background-color: rgb(209, 208, 207);
+    width: 30%;
+    height: 570px;
+    padding: 18px  14px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+
+ }
+
+ .Toyoda2 {
+    margin: 0px  5% ;
+ }
+
+ .Toyoda-image {
+    width: 90%;
+    margin: auto;
+
+    position: relative;
+    
+ }
+
+ .Toyoda-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: top;
+}
+
+ .Toyoda-icons {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    background-color: rgb(0, 0, 0 ,0.7);
+
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s ;
+    height: 100%;
+
+
+ }
+
+
+ .Toyoda-item:hover    .Toyoda-icons {
+    visibility: visible;
+    opacity: 0.5 ;
+ }
+
+ .Toyoda-icons  a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color:#000000 ;
+    color: #fff;
+    margin-left: auto ;
+    cursor: pointer;
+
+ }
+
+ .Toyoda-icons  a  i {
+      line-height: 40px;
+      font-size: 28px;
+ }
+ 
+ .Toyoda-info-title {
+    padding: 10px  0px;
+    text-transform: capitalize;
+ }
+
+ .Toyoda-info-p {
+    text-transform: capitalize;
+    color: #585858;
+
+
+ }
+
+ 
+
+
+
+ /* ////////////////////////////////////////////////////////////////////// */
+
+
+ .Toyoda-item::after {
+    position: absolute;
+    content: "";
+
+    width: 100%;
+    height:0;
+
+     top:0;
+     left:0;
+
+    background-color:#000000;
+    opacity: 0.7;
+    z-index: -1;
+
+ }
+
+ .Toyoda-item:hover::after {
+      width: 100%;
+      height: 100%;
+      opacity: 0.1;
+      transition: 2s;
+
+ }
+
+ /* //////////////////////////////////////////////////section 11////////////////////////////////////////// */
+
+
+
+
+ .Engineers-title {
+    font-size: 40px;
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 500px;
+    margin-bottom: 20px ;
+
+ }
+
+ .Engineers-line {
+    width: 150px;
+    height: 4px;
+    background-color: #EB0A1E;
+    margin: auto;
+
+    margin-bottom: 92px ;
+ }
+ .Engineers-container {
+    width: 80%;
+    margin:auto ;
+ }
+
+ .Engineers-parent {
+    overflow: auto;
+ }
+
+
+ 
+ .Engineers-item {
+    float: left;
+    /* background-color: rgb(209, 208, 207); */
+    border: 2px solid #EB0A1E;
+    border-radius: 10px;
+    width: 30%;
+    height: 800px;
+    padding: 18px  14px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+
+ }
+
+ .Engineers2 {
+    margin: 0px  5% ;
+ }
+
+ .Engineers-image {
+    width: 100%;
+    /* height: 80%; */
+    margin: auto;
+
+    position: relative;
+    
+ }
+
+ .Engineers-image  img {
+    width: 100%;
+    height: 50%;
+    border-radius: 5px;
+
+ }
+
+
+ .Engineers-icons{
+ margin: 50px 0px;
+ }
+  .Engineers-icons a{
+    color: #1877F2;
+  }
+
+
+ .Engineers-info-title{
+     margin: 50px 0px;
+ }
+
+ .Engineers-info-p{
+    font-weight: bold;
+    color: #666666;
+ }
+
+ .Engineers{
+    color: #EB0A1E;
+    margin: 50px 0px;
+    cursor: pointer;
+ }
+
+  .Engineers-item::after {
+    position: absolute;
+    content: "";
+
+    width: 100%;
+    height:0;
+
+     top:0;
+     left:0;
+
+    background-color:#EB0A1E;
+    opacity: 0.7;
+    z-index: -1;
+
+ }
+
+ .Engineers-item:hover::after {
+      width: 100%;
+      height: 100%;
+      opacity: 0.1;
+      transition: 2s;
+
+ }
+
+
+
+ /* //////////////////////////////////////////////////section 12 ////////////////////////////////////////// */
+
+
+ .footer{
+    margin-top: 200px;
+    width: 100%;
+    height:  550px ;    
+    background-color:#f4f4f4 ;
+    /* margin: auto; */
+    text-align: center;
+ }
+
+ .image-footer img{
+
+    margin-top: 120px;
+ }
+
+ .footer-icon {
+    margin: 120px 0px; 
+}
+
+.footer-icon a {
+    display: inline-block; 
+    width: 45px; 
+    height: 45px;
+    text-align: center;     
+    border-radius: 50%; 
+    background-color: #4a4a4a; 
+    color: #fff;
+    margin: 0 5px; 
+    text-decoration: none; 
+    transition: 0.3s;
+}
+
+.footer-icon a:hover {
+    background-color: #EB0A1E; 
+}
+
+.footer-icon a i {
+    font-size: 20px; 
+    line-height: 45px;
+}
+
+
+
+/* ==========================================================================
+   Responsive Design for Tablets (Screens smaller than 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    /* Reset massive gaps between sections for smaller screens */
+    .title3, .background, .photo-section, .pricing-table-title, 
+    .photo-section-8, .Toyoda-title, .Engineers-title, .choose-section {
+        margin-top: 100px !important; 
+    }
+
+    /* Convert floated layout to Flexbox for better alignment */
+    .parent, .team-parent, .team-parent-offer, .Toyoda-parent, 
+    .Engineers-parent, .pricing-table-parent {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    /* Adjust Section 3 Cards */
+    .div1, .div2, .div3 {
+        width: 45%;
+        margin: 15px;
+        float: none;
+    }
+
+    /* Adjust Team Items */
+    .team-item, .team-item-2 {
+        flex: 0 0 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+
+    /* Adjust Offers */
+    .offer {
+        width: 45%;
+        margin: 15px;
+        float: none;
+    }
+
+    /* Adjust Choosing Section (Section 6) */
+    .left-content, .right-content {
+        width: 90%;
+        margin: 20px auto;
+        float: none;
+    }
+
+    /* Adjust Stats (Section 7) */
+    .stat-item {
+        width: 45%;
+        margin-left: 0;
+    }
+
+    /* Adjust Pricing Cards (Section 8) */
+    .pricing-card {
+        width: 45%;
+        margin: 15px;
+        float: none;
+    }
+
+    /* Adjust Profile Section (Section 9) */
+    .div-section-8 {
+        width: 80%;
+        margin: 0 auto;
+        float: none;
+    }
+
+    /* Adjust Team/Engineer Cards (Sections 10 & 11) */
+    .Toyoda-item, .Engineers-item {
+        width: 45%;
+        margin: 15px;
+        float: none;
+        height: auto;
+    }
+}
+
+/* ==========================================================================
+   Responsive Design for Mobile Phones (Screens smaller than 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* 1. Crucial Fix: Remove the hardcoded 11300px body height */
+    body {
+        height: auto; 
+    }
+
+    /* 2. Fix the Header and Navigation */
+    .header {
+        height: auto;
+        padding-bottom: 15px;
+        position: relative; /* Prevents overlapping content when stacking */
+    }
+    
+    .header img, .header_title, .search_icon, .list {
+        float: none;
+        display: block;
+        margin: 10px auto;
+        text-align: center;
+        position: static;
+    }
+
+    .list {
+        padding: 0;
+    }
+
+    .list li {
+        display: block;
+        margin: 15px 0;
+    }
+
+    /* 3. Adjust Hero Section (Home) */
+    .home-title1 {
+        font-size: 32px;
+    }
+    
+    .home-p1 {
+        font-size: 14px;
+        padding: 0 20px;
+    }
+    
+    .home-btn, .home-btn2 {
+        margin: 10px auto;
+        display: block;
+    }
+
+    /* 4. Make all grid items full width (100%) */
+    .div1, .div2, .div3, 
+    .offer, .stat-item, 
+    .pricing-card, .Toyoda-item, 
+    .Engineers-item {
+        width: 90%;
+        margin: 15px auto !important; /* Forces centering */
+    }
+
+    .team-item, .team-item-2 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    /* Fix image squishing on mobile */
+    .Toyoda-image img, .Engineers-image img {
+        height: auto;
+        max-height: 350px; 
+    }
+
+    /* 5. Center content in Section 9 */
+    .div-section-8 {
+        width: 95%;
+        text-align: center;
+    }
+    
+    .photo-backgroud-1, .photo-backgroud-2 {
+        float: none;
+        margin: 0 auto 15px auto;
+    }
+    
+    .profile-text {
+        float: none;
+        margin: 0;
+    }
+    
+    .introuduce {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* 6. Footer adjustments */
+    .footer {
+        height: auto;
+        padding-bottom: 50px;
+        margin-top: 100px;
+    }
+    
+    .image-footer img {
+        margin-top: 50px;
+        max-width: 80%;
+    }
+    
+    .footer-icon {
+        margin: 40px 0;
+    }
+}

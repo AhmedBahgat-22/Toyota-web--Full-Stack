@@ -1,0 +1,47 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Avenir Next', 'Inter', -apple-system, sans-serif; background: #fff; }
+
+.v-header { position: sticky; top: 0; background: #fff; z-index: 100; border-bottom: 1px solid #e0e0e0; }
+.v-header-inner { display: flex; align-items: center; padding: 0 40px; height: 56px; gap: 40px; }
+.v-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: #000; font-weight: 700; font-size: 18px; }
+.v-logo img { object-fit: contain; }
+.v-nav { display: flex; gap: 32px; flex: 1; }
+.v-nav a { text-decoration: none; color: #333; font-size: 15px; font-weight: 500; padding-bottom: 18px; border-bottom: 3px solid transparent; transition: 0.2s; }
+.v-nav a.active, .v-nav a:hover { color: #000; border-bottom-color: #EB0A1E; }
+.v-account { text-decoration: none; color: #333; font-size: 14px; display: flex; align-items: center; gap: 6px; }
+
+.v-layout { display: flex; min-height: calc(100vh - 56px); }
+
+.v-sidebar { width: 230px; min-width: 230px; border-right: 1px solid #e8e8e8; padding: 28px 20px; }
+.v-sidebar-label { font-size: 11px; color: #888; letter-spacing: 1.5px; font-weight: 600; margin-bottom: 14px; }
+.v-category-list { list-style: none; }
+.v-cat-item { border-left: 3px solid transparent; margin-bottom: 2px; }
+.v-cat-item a { display: block; padding: 9px 12px; text-decoration: none; color: #333; font-size: 15px; transition: 0.15s; }
+.v-cat-item:hover a { color: #000; }
+.v-cat-item.active { border-left-color: #EB0A1E; }
+.v-cat-item.active a { font-weight: 600; color: #000; }
+.v-sidebar-hr { border: none; border-top: 1px solid #e8e8e8; margin: 18px 0; }
+.v-sidebar-extra { list-style: none; }
+.v-sidebar-extra li { margin-bottom: 10px; }
+.v-sidebar-extra a { text-decoration: none; color: #333; font-size: 14px; }
+
+.v-main { flex: 1; padding: 32px; }
+.v-loading { text-align: center; color: #888; padding: 60px 0; font-size: 16px; }
+.v-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+.v-card { border: 1px solid #e8e8e8; border-radius: 8px; padding: 16px; transition: box-shadow 0.2s; display: flex; flex-direction: column; }
+.v-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+.v-badge { display: inline-block; background: #e8eeff; color: #3355bb; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 4px; margin-bottom: 12px; }
+.v-card-img { text-align: center; padding: 8px 0 16px; }
+.v-card-img img { width: 100%; max-height: 180px; object-fit: contain; }
+.v-as-shown { font-size: 12px; color: #888; margin-bottom: 6px; }
+.v-year { font-size: 13px; font-weight: 600; color: #333; margin-bottom: 4px; }
+.v-car-name { font-size: 22px; font-weight: 700; color: #000; margin-bottom: 6px; }
+.v-msrp { font-size: 14px; color: #444; margin-bottom: 16px; }
+.v-card-btns { display: flex; gap: 10px; margin-top: auto; }
+.v-btn-build { flex: 1; padding: 11px 0; background: #000; color: #fff; border: none; border-radius: 30px; font-size: 15px; font-weight: 600; cursor: pointer; transition: 0.2s; }
+.v-btn-build:hover { background: #333; }
+.v-btn-shop { flex: 1; padding: 11px 0; background: #fff; color: #000; border: 2px solid #000; border-radius: 30px; font-size: 15px; font-weight: 600; cursor: pointer; transition: 0.2s; }
+.v-btn-shop:hover { background: #f5f5f5; }
+
+.v-footer { text-align: center; padding: 20px; font-size: 12px; color: #888; border-top: 1px solid #e8e8e8; margin-top: 40px; }

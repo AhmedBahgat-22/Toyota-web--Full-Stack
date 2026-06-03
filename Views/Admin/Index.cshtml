@@ -1,0 +1,42 @@
+@{
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+    ViewData["Title"] = "Dashboard";
+}
+
+<h1 class="adm-title">Dashboard</h1>
+<p class="adm-sub">Welcome back, @(Context.Session.GetString("AdminUsername") ?? "Admin")</p>
+
+<div class="adm-stats">
+    <div class="adm-stat-card">
+        <i class="fa-solid fa-car"></i>
+        <div>
+            <h2>@ViewBag.VehiclesCount</h2>
+            <p>Vehicles</p>
+        </div>
+        <a href="/Admin/Vehicles">Manage →</a>
+    </div>
+    <div class="adm-stat-card">
+        <i class="fa-solid fa-user-gear"></i>
+        <div>
+            <h2>@ViewBag.EngineersCount</h2>
+            <p>Engineers</p>
+        </div>
+        <a href="/Admin/Engineers">Manage →</a>
+    </div>
+    <div class="adm-stat-card">
+        <i class="fa-solid fa-user-tie"></i>
+        <div>
+            <h2>@ViewBag.ManagersCount</h2>
+            <p>Managers</p>
+        </div>
+        <a href="/Admin/Managers">Manage →</a>
+    </div>
+    <div class="adm-stat-card">
+        <i class="fa-solid fa-globe"></i>
+        <div>
+            <h2>1</h2>
+            <p>Live Site</p>
+        </div>
+        <a href="/" target="_blank">View →</a>
+    </div>
+</div>

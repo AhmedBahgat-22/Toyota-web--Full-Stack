@@ -1,0 +1,77 @@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointment Confirmed — Toyota</title>
+    <link rel="stylesheet" href="~/css/all.css">
+    <link rel="stylesheet" href="~/css/service.css">
+</head>
+<body>
+
+<header class="v-header">
+    <div class="v-header-inner">
+        <a href="/" class="v-logo">
+            <img src="~/images/Toyota_Icon_15.jpeg" alt="Toyota" width="36" height="28">
+            <span>TOYOTA</span>
+        </a>
+        <nav class="v-nav">
+            <a href="/VehiclePage">Vehicles</a>
+            <a href="/Shop">Shop</a>
+            <a href="/Service" class="active">Support & Service</a>
+        </nav>
+        <a href="#" class="v-account">
+            <i class="fa-regular fa-circle-user"></i> Account
+        </a>
+    </div>
+</header>
+
+<div class="confirmation-container">
+    <div class="confirmation-card">
+        <div class="confirmation-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h1>Appointment Confirmed!</h1>
+        <p class="confirmation-sub">
+            Thank you, @TempData["CustomerName"]!
+            Your service appointment has been successfully scheduled.
+        </p>
+
+        <div class="appointment-details">
+            <div class="appointment-row">
+                <i class="fa-solid fa-calendar"></i>
+                <div>
+                    <span>Appointment Date</span>
+                    <strong>@TempData["ServiceDate"]</strong>
+                </div>
+            </div>
+            <div class="appointment-row">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                    <span>Confirmation</span>
+                    <strong>Sent to your email</strong>
+                </div>
+            </div>
+            <div class="appointment-row">
+                <i class="fa-solid fa-phone"></i>
+                <div>
+                    <span>Dealer Contact</span>
+                    <strong>Within 24 hours</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="confirmation-actions">
+            <a href="/" class="btn-home">Back to Home</a>
+            <a href="/Service" class="btn-shop-more">Back to Service</a>
+        </div>
+    </div>
+</div>
+
+<footer class="v-footer">
+    <span>&copy;2026 Toyota Motor Sales, U.S.A., Inc.</span>
+</footer>
+</body>
+</html>

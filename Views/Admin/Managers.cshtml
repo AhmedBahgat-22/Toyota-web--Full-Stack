@@ -1,0 +1,48 @@
+@model List<ToyotaProject.Models.Manager>
+@{
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+    ViewData["Title"] = "Managers";
+}
+
+<div class="adm-page-header">
+    <h1 class="adm-title">Managers</h1>
+    <a href="/Admin/CreateManager" class="adm-btn-add">
+        <i class="fa-solid fa-plus"></i> Add Manager
+    </a>
+</div>
+
+<div class="adm-table-wrap">
+    <table class="adm-table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td><img src="@m.ImageUrl" width="60" height="60" style="object-fit:cover;border-radius:50%"></td>
+                <td><strong>@m.Name</strong></td>
+                <td>@m.Role</td>
+                <td class="adm-actions">
+                    <a href="/Admin/EditManager/@m.Id" class="adm-btn-edit">
+                        <i class="fa-solid fa-pen"></i> Edit
+                    </a>
+                    <form method="post" action="/Admin/DeleteManager" style="display:inline"
+                          onsubmit="return confirm('Delete @m.Name?')">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="id" value="@m.Id">
+                        <button type="submit" class="adm-btn-del">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

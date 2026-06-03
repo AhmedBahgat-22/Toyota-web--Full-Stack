@@ -1,0 +1,924 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+
+<meta charset="UTF_8">
+
+<link rel="stylesheet" href="~/css/style.css">
+<link rel="stylesheet" href="~/css/all.css">
+
+<title>
+    Toyota
+</title>
+
+</head>
+
+
+
+<body>
+        <!-- /////////////////////////////////// header Section ////////////////////////////////-->
+
+@Html.AntiForgeryToken()
+     <div class="header">
+            <img src="images/Toyota_Icon_15.jpeg">
+
+                <input class="header_title" type="text" >
+                        <a href="#" class="search_icon"><i class="fa-solid fa-magnifying-glass "></i></a>
+
+                            <ul class="list">
+
+                                <li><a href="#">Home</a></li>
+                                <li><a href="/VehiclePage">Vehicles</a></li>
+                                <li><a href="/Shop">Shop</a></li>
+                                <li><a href="/Contact">Contact</a></li>
+
+                              <li class="dropdown_parent">
+                                <a href="/Service">Service</a>
+                                <ul class="dropdown_menu">
+                                    <li><a href="/Service/History">Service History</a></li>
+                                    <li><a href="/Service/Recalls">Recalls</a></li>
+                                    <li><a href="/Service/Schedule">Service campaigns</a></li>
+                                </ul>
+                            </li>
+
+                               <li><a href="/UserAccount">Account</a></li>
+
+                            </ul>
+
+
+    </div>
+
+
+
+    <!-- ///////////////////////////////////Section 2 ////////////////////////////////-->
+
+            
+          <div class="home">
+                <div class="home-overlay">
+                   <div class="home-parent">
+                         <h2 class="home-title1">Discover Toyota</h2>
+                         <p class="home-p1">Discover the right drive for you.</p>
+                        <button class="home-btn home-btn1" onclick="location.href='/VehiclePage'">Explor!</button>
+                        <button class="home-btn home-btn2" onclick="location.href='/Contact'">Learn More</button>
+                   </div> <!-- /home-parent -->
+              </div> <!-- /home-overlay -->
+          </div>  <!-- /home -->
+
+
+
+
+    <!-- ///////////////////////////////////Section 3 ////////////////////////////////-->
+
+                             <h2 class="title3">Shopping Tools</h2>
+                             <br>
+
+                            <div class="line"></div>
+
+      <div class="parent">
+               <div class="div1">
+
+                    <a href="#" class="wrench_icon"><i class="fa-solid fa-wrench"></i></a>
+                    <h2 class="title10 ">Build & Price</h2>
+                    <p class="p10 p11">Customize your Toyota with colors</p>
+                    <button class="btn10" onclick="location.href='/VehiclePage'">See more</button>
+
+                  
+               </div>
+
+               <div class=" div2">
+                    <a href="#" class="wrench_icon"><i class="fa-solid fa-magnifying-glass "></i></a>
+                    <h2 class="title10"> Search Inventory</h2>
+                    <p class="p10 p12">Crossovers & SUVs</p>
+                    <button class="btn10 btndiv2" onclick="location.href='/VehiclePage'">See more</button>
+
+               
+               </div>
+               
+               <div class="div3">
+                    <a href="#" class="wrench_icon"><i class="fa-solid fa-money-bill"></i></a>
+                    <h2 class="title10">Special Offers</h2>
+                    <p class="p10 p13">Featured vehicles in your area</p>
+                    <button class="btn10 btndiv3" onclick="location.href='/OffersPage'">See more</button>
+
+                    
+               </div>
+
+         </div>
+
+
+
+
+
+    <!-- ///////////////////////////////////-Section4 ////////////////////////////////-->
+         
+    
+    
+ <!-- Section 4 -->
+<div class="background">
+    <h2 class="title_section4">Explore All Vehicles</h2>
+    <div class="line_section4"></div>
+    <div class="team-container">
+        <div class="team-parent">
+
+            <div class="team-item">
+                <div class="team-img">
+                      <img src="~/images/toyota_camry_ Sedan.webp" alt="" width="180" height="180">                   
+                       <div class="team-overlay">
+                        <div class="information1">
+                            <h2 class="team-info-title">Sedan</h2>
+                            <p class="team-info-p">Camry</p>
+                        </div>
+                        <div class="div-icon">
+                            <a href="#" class="save-btn" data-id="3" data-name="Camry">
+                                <i class="fa-solid fa-bookmark"></i>
+                            </a>
+                            <a href="/Shop/Checkout/3">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-item team-item-2">
+                <div class="team-img">
+                       <img src="~/images/Crossover.webp" alt="" width="180" height="180">                    
+                       <div class="team-overlay">
+                        <div class="information1">
+                            <h2 class="team-info-title">Crossover</h2>
+                            <p class="team-info-p">Corolla Cross</p>
+                        </div>
+                    <div class="div-icon">
+                        <a href="#" class="save-btn" data-id="1" data-name="Corolla Cross">
+                            <i class="fa-solid fa-bookmark"></i>
+                        </a>
+                        <a href="/Shop/Checkout/1">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-item">
+                <div class="team-img">
+                    <img src="~/images/suv_(Off-Road).jpg" alt="" width="180" height="180">
+                    <div class="team-overlay">
+                        <div class="information1">
+                            <h2 class="team-info-title">SUV (Off-Road)</h2>
+                            <p class="team-info-p">land cruiser</p>
+                        </div>
+                    <div class="div-icon">
+                        <a href="#" class="save-btn" data-id="2" data-name="Land Cruiser">
+                            <i class="fa-solid fa-bookmark"></i>
+                        </a>
+                        <a href="/Shop/Checkout/2">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-item">
+                <div class="team-img">
+           <img src="~/images/(Hatchback).jpg" alt="" width="180" height="180">                
+                  <div class="team-overlay">
+                        <div class="information1">
+                            <h2 class="team-info-title">Hatchback</h2>
+                            <p class="team-info-p">Corolla Hatchback</p>
+                        </div>
+                     <div class="div-icon">
+                        <a href="#" class="save-btn" data-id="4" data-name="Corolla Hatchback">
+                            <i class="fa-solid fa-bookmark"></i>
+                        </a>
+                        <a href="/Shop/Checkout/4">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-item team-item-2">
+                <div class="team-img">
+                    <img src="~/images/Coupe.jpg" alt="" width="180" height="180">
+                    <div class="team-overlay">
+                        <div class="information1">
+                            <h2 class="team-info-title">Coupe</h2>
+                            <p class="team-info-p">GR Supra</p>
+                        </div>
+                        <div class="div-icon">
+                            <a href="#" class="save-btn" data-id="5" data-name="GR Supra">
+                                <i class="fa-solid fa-bookmark"></i>
+                            </a>
+                            <a href="/Shop/Checkout/5">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-item">
+                <div class="team-img">
+                    <img src="~/images/EVs.webp" alt="" width="180" height="180">
+                    <div class="team-overlay">
+                        <div class="information1">
+                            <h2 class="team-info-title">EVs</h2>
+                            <p class="team-info-p">bZ</p>
+                        </div>
+                       <div class="div-icon">
+                            <a href="#" class="save-btn" data-id="6" data-name="bZ4X">
+                                <i class="fa-solid fa-bookmark"></i>
+                            </a>
+                            <a href="/Shop/Checkout/6">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    <!-- ///////////////////////////////////-Section5 ////////////////////////////////-->
+
+
+
+  <h2 class="title_section5">
+                    What We Offer
+             </h2>
+ 
+            <div class="line_section5"></div>
+
+        <div class="team-container-offer">
+                <div class="team-parent-offer">
+
+
+
+            <div class="offer">
+
+                    <a href="#" class="wrench_icon2"><i class="fa-solid fa-car-burst"></i></a>
+
+                    <h2 class="offer_title">
+                       Full Insurance
+                    </h2>
+
+
+                    <p class="offer_p">
+                    We offer comprehensive insurance plans to protect your vehicle
+                    against any unexpected road accidents  
+                   </p>
+
+
+
+             </div>
+
+
+
+
+
+                <div class="offer offer-offer2">
+
+                    <a href="#" class="wrench_icon2"><i class="fa-solid fa-screwdriver-wrench"></i></a>
+
+                    <h2 class="offer_title">
+                        Expert Maintenance
+                    </h2>
+
+
+                    <p class="offer_p">
+                        Our professional team provides regular check-ups 
+                        and repairs using original spare parts.
+                    </p>
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <div class="offer">
+
+                    <a href="#" class="wrench_icon2"><i class="fa-brands fa-cc-visa"></i></a>
+
+                    <h2 class="offer_title">
+                        Manage Vehicle Payments
+
+                    </h2>
+
+
+                    <p class="offer_p">
+                       Sign in and link your Toyota Financial 
+                       Services account to access details and make payments.
+                    </p>
+
+
+
+                </div>
+
+                    
+
+
+
+
+
+
+
+
+
+            <div class="offer">
+
+                    <a href="#" class="wrench_icon2"><i class="fa-solid fa-phone"></i></a>
+
+                    <h2 class="offer_title">
+                        Safety Recall Information
+                    </h2>
+
+
+                    <p class="offer_p">
+                       Get information on open safety recalls 
+                       and service campaigns
+                    </p>
+
+
+
+             </div>
+
+
+
+
+
+                <div class="offer offer-offer2">
+
+                    
+
+                    <a href="#" class="wrench_icon2"><i class="fa-solid fa-handshake"></i></a>
+
+                    <h2 class="offer_title">
+                       Trusted Deals
+                    </h2>
+
+
+                    <p class="offer_p">
+                        Transparent contracts and verified car 
+                        histories to ensure a safe and honest buying experience.
+                    </p>
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <div class="offer">
+
+                    <a href="#" class="wrench_icon2"><i class="fa-solid fa-calendar"></i></a>
+
+                    <h2 class="offer_title">
+                        Schedule Toyota Service
+
+                    </h2>
+
+
+                    <p class="offer_p">
+                       Sign-in and schedule a service appointment
+                       online at one of our dealers.
+                    </p>
+
+
+
+                </div>
+
+                    
+
+
+        </div>
+  </div>
+
+
+
+
+
+
+    <!-- ///////////////////////////////////-Section6 ////////////////////////////////-->
+
+
+
+<!--Float حاوية بتلم السكشن كله عشان تظبط الـ  -->
+<div class="choose-section">
+
+    <!-- الجزء اللي على الشمال (الكلام) -->
+    <div class="left-content">
+        <h2 class="choosing-title">Why Choose Toyota</h2>
+        <div class="line-chossing"></div>
+        
+        <p class="chosse-p">
+            We don't just build cars; we engineer peace of mind.
+            Experience the perfect harmony of legendary reliability,
+            cutting-edge innovation, and everyday practicality.   
+        </p>
+
+        <div class="span_chosse">
+            <div class="list-item">
+                <i class="fa-solid fa-check io"></i>
+                <p>Legendary Reliability: Vehicles engineered to last, delivering dependable performance on every journey.</p>
+            </div>
+
+            <div class="list-item">
+                <i class="fa-solid fa-check io"></i>  
+                <p>Advanced Safety: Equipped with top-tier safety features to protect you and your loved ones.</p>
+            </div>
+
+            <div class="list-item">
+                <i class="fa-solid fa-check io"></i>  
+                <p>Eco-Friendly Innovation: Leading the automotive world with advanced hybrid and sustainable technologies.</p>
+            </div>
+
+            <div class="list-item">
+                <i class="fa-solid fa-check io"></i>  
+                <p>Trusted Legacy: Decades of global trust, making us a proud part of countless family journeys.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- الجزء اللي على اليمين (الصورة والدواير) -->
+    <div class="right-content">
+        <img class="img-no1" src="images/corolla.avif" alt="Hilux" width="600" height="350">
+        
+        <!-- كود الدواير -->
+        <div class="dots-container">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+     <!-- ///////////////////////////////////-Section7 //////////////////////////////// -->
+
+
+
+
+
+ <div class="photo-section">
+       <div class="section-overlay">
+             <div class="container-section">
+                 <div class="parent-section">
+
+
+            <div class="stat-item">
+                    <i class="fa-solid fa-users stat-icon"></i>
+                    <h2 class="stat-number">100M</h2>
+                    <p class="stat-text">Happy Client</p>
+            </div>
+
+                <!-- العنصر الثاني -->
+            <div class="stat-item">
+                    <i class="fa-solid fa-car stat-icon"></i>
+                    <h2 class="stat-number">50M+</h2>
+                    <p class="stat-text">Luxury Cars</p>
+            </div>
+
+                <!-- العنصر الثالث -->
+            <div class="stat-item">
+                    <i class="fa-solid fa-trophy stat-icon"></i>
+                    <h2 class="stat-number">10K</h2>
+                    <p class="stat-text">Awards Won</p>
+            </div>
+
+                <!-- العنصر الرابع -->
+            <div class="stat-item">
+                    <i class="fa-solid fa-location-dot stat-icon"></i>
+                    <h2 class="stat-number">100K</h2>
+                    <p class="stat-text">Service Points</p>
+            </div>
+
+
+
+                   </div>  <!--parent-section -->
+              </div>    <!-- container-section -->
+          </div>    <!-- section-overlay -->             
+     </div>  <!-- photo-section -->
+
+
+
+<!--/////////////////////////////////// Section 8 ////////////////////////////////-->
+
+<h2 class="pricing-table-title"> Pricing Table </h2>
+<div class="pricing-table-line"></div>
+
+<div class="pricing-table-parent">
+
+    <!-- الكارت الأول -->
+ <div class="pricing-card">
+        <h2 class="pricing-table-title2">SUVs</h2>
+        <div class="inside1">
+            <h2 class="dolar1">
+                $57,880<br>/land<br>cruiser
+            </h2>
+        </div>
+        <h3 class="pricing-table-title3">Our Heritage. Your Adventure.</h3>
+        <h3 class="pricing-table-title4">Standard Full-Time 4-Wheel Drive</h3>
+        <h3 class="pricing-table-title5">2.4L 4 Cylinder i-FORCE MAX Hybrid</h3>
+        <!-- الكارت الأول - SUVs -->
+            <button class="pricing-table-button1" onclick="location.href='/Shop/Checkout/2'">Shop</button>
+
+</div>
+
+    <!-- الكارت الأوسط (المميز) -->
+    <div class="pricing-card center-card">
+        <h2 class="pricing-table-title2">Crossover</h2>
+        <div class="inside1">
+            <h2 class="dolar1">
+                $25,035<br>/Corolla<br>Cross
+            </h2>
+        </div>
+        <h3 class="pricing-table-title3">Hit the road and let your story unfold</h3>
+        <h3 class="pricing-table-title4">FWD or AWD</h3>
+        <h3 class="pricing-table-title5">1500 Lbs. of Towing Capacity</h3>
+        <!-- الكارت الأوسط - Crossover -->
+            <button class="pricing-table-button1" onclick="location.href='/Shop/Checkout/1'">Shop</button>
+    </div>
+
+    <!-- الكارت الثالث -->
+    <div class="pricing-card">
+        <h2 class="pricing-table-title2">Hatchback</h2>
+        <div class="inside1">
+            <h2 class="dolar1">
+                $24,580<br>/Corolla<br>Hatchback
+            </h2>
+        </div>
+        <h3 class="pricing-table-title3">Sport Drive Mode With Paddle Shifters</h3>
+        <h3 class="pricing-table-title4">AWD</h3>
+        <h3 class="pricing-table-title5">2.0L Dynamic Force Engine</h3>
+        
+            <button class="pricing-table-button1" onclick="location.href='/Shop/Checkout/4'">Shop</button>
+    </div>
+
+</div>
+
+
+<!--/////////////////////////////////// Section 9 ////////////////////////////////-->
+
+
+<div class="photo-section-8">
+    <div class="section-overlay-8">
+        <div class="parent-section-8">
+                    
+            <!-- الكارت الأول -->
+            <div class="div-section-8">
+                
+                <!-- الصندوق اللي هيلم الصورة والبيانات جنب بعض -->
+                <div class="profile-header">
+                    <div class="photo-backgroud-1"></div>
+                    <div class="profile-text">
+                        <h2 class="name">Kiichiro Toyoda</h2>
+                        <span class="position">actual founder</span>
+                    </div>
+                </div>
+                                    
+                <p class="introuduce">
+                    He is the actual founder of the "Toyota Motor Corporation."
+                    It began as an automobile department within his father's loom company.
+                </p>
+
+            </div>
+
+            <!-- الكارت الثاني -->
+            <div class="div-section-8">
+
+                <!-- الصندوق اللي هيلم الصورة والبيانات جنب بعض -->
+                <div class="profile-header">
+                    <div class="photo-backgroud-2"></div>
+                    <div class="profile-text">
+                        <h2 class="name">Sakichi Toyoda</h2>
+                        <span class="position">Kiichiro's father</span>
+                    </div>
+                </div>
+                                    
+                <p class="introuduce">
+                    He is Kiichiro's father and is known as the "Father of the Japanese Industrial Revolution.
+                    He founded the "Toyoda Automatic Loom Works."
+                </p>
+
+            </div>
+
+        </div>  <!-- parent-section-8 -->
+    </div>  <!-- section-overlay-8  -->
+</div>  <!-- photo-section-8 -->
+
+
+
+
+
+
+
+
+
+<!--/////////////////////////////////// Section 10 ////////////////////////////////-->
+
+
+
+
+
+
+            <h2 class="Toyoda-title">Toyota managers</h2>
+            <p class="Toyoda-line"></p>
+
+
+            <div class="Toyoda-container">
+                 <div class="Toyoda-parent">
+                      
+                     <div class="Toyoda-item">
+                           <div class="Toyoda-image">
+                               <img src="images/Sakichi .jpg" alt=""  width="180px"  height="180px" >
+
+                                <div class="Toyoda-icons">
+                                      <a href=""><i class="fab fa-facebook-square "></i></a> 
+                                     <a href=""><i class="fab fa-instagram-square "></i></a>  
+                                      <a href=""><i class="fab fa-linkedin"></i></a> 
+                                </div> <!-- /Toyoda-icons -->
+                           </div> <!-- /Toyoda-image -->
+
+                           <div class="Toyoda-info">
+                                 <h2 class="Toyoda-info-title">Sakichi Toyoda</h2>
+                                 <p class="Toyoda-info-p">Parent company founder</p>
+                           </div> <!-- /Toyoda-info -->
+                     </div> <!-- /Toyoda-item -->
+
+                      <div class="Toyoda-item Toyoda2">
+                           <div class="Toyoda-image">
+                               <img src="images/Kiichiro_Toyoda.jpg" alt=""  width="180px"  height="180px" >
+
+                                <div class="Toyoda-icons">
+                                       <a href=""><i class="fab fa-facebook-square "></i></a> 
+                                     <a href=""><i class="fab fa-instagram-square "></i></a>  
+                                      <a href=""><i class="fab fa-linkedin"></i></a> 
+                                </div> <!-- /Toyoda-icons -->
+                           </div> <!-- /Toyoda-image -->
+
+                           <div class="Toyoda-info">
+                                 <h2 class="Toyoda-info-title">Risaburo Toyoda</h2>
+                                 <p class="Toyoda-info-p">1st President</p>
+                           </div> <!-- /Toyoda-info -->
+                     </div> <!-- /Toyoda-item -->
+
+                      <div class="Toyoda-item">
+                           <div class="Toyoda-image">
+                               <img src="images/Rizaburo_Toyoda.jpg" alt=""  width="180px"  height="180px" >
+
+                                <div class="Toyoda-icons">
+                                    <a href=""><i class="fab fa-facebook-square "></i></a> 
+                                     <a href=""><i class="fab fa-instagram-square "></i></a>  
+                                      <a href=""><i class="fab fa-linkedin"></i></a> 
+                                </div> <!-- /Toyoda-icons -->
+                           </div> <!-- /Toyoda-image -->
+
+                           <div class="Toyoda-info">
+                                 <h2 class="Toyoda-info-title">Kiichiro Toyoda</h2>
+                                 <p class="Toyoda-info-p">2nd President & Car division founder</p>
+                           </div> <!-- /Toyoda-info -->
+                     </div> <!-- /Toyoda-item -->
+
+
+                 </div> <!-- /Toyoda-parent -->
+            </div>  <!-- /Toyoda-container -->
+ 
+
+
+
+
+
+<!--/////////////////////////////////// Section 11 ////////////////////////////////-->
+
+
+
+
+   <h2 class="Engineers-title">Engineers and technicians</h2>
+            <p class="Engineers-line"></p>
+
+
+            <div class="Engineers-container">
+                 <div class="Engineers-parent">
+                      
+                 <div class="Engineers-item">
+
+                           <div class="Engineers-image">
+                               <img src="images/Taiichi Ohno.jpg" alt=""  width="180px"  height="180px" >
+                           </div> <!-- /Toyoda-image -->
+
+
+                   <div class="Engineers-icons">
+                            <a href=""><i class="fab fa-facebook-square "></i></a> <span>Taiichi Ohno</span>
+                            <a href=""><i class="fa-brands fa-twitter"></i></i></a> <span>50</span>
+                            <a href=""><i class="fab fa-linkedin"></i></a> <span>12 jan</span>
+                     </div> <!-- /Engineers-icons -->
+
+                           <div class="Engineers-info">
+                                 <h2 class="Engineers-info-title">industrial engineer</h2>
+                                 <p class="Engineers-info-p">
+                                    Ohno invented Lean Manufacturing, 
+                                    a system that eliminated waste in time and resources. 
+                                    This system is still studied and applied by companies all over the world today.
+                                    </p>
+                                 <p class="Engineers">read more</p>
+                    
+                           </div> <!-- /Engineers-info -->
+                     </div> <!-- /Engineers-item -->
+
+                    <div class="Engineers-item   Engineers2">
+
+                           <div class="Engineers-image">
+                               <img src="images/Hiromu Naruse.webp" alt=""  width="180px"  height="180px" >
+                           </div> <!-- /Engineers-image -->
+
+
+                   <div class="Engineers-icons">
+                            <a href=""><i class="fab fa-facebook-square "></i></a> <span>Hiromu Naruse</span>
+                            <a href=""><i class="fa-brands fa-twitter"></i></i></a> <span> 90</span>
+                            <a href=""><i class="fab fa-linkedin"></i></a> <span>12 dec</span>
+                     </div> <!-- /Engineers-icons -->
+
+                           <div class="Engineers-info">
+                                 <h2 class="Engineers-info-title">technical legend</h2>
+                                 <p class="Engineers-info-p">
+                                    He was the primary mechanic and engineer behind the greatest Toyota and Lexus sports cars,
+                                    most notably the iconic Lexus LFA.
+                                    He paid attention to the finest technical details of a car's performance</p>
+                                 <p class="Engineers">read more</p>
+                    
+                           </div> <!-- /Engineers-info -->
+                     </div> <!-- /Engineers-item -->
+
+                        <div class="Engineers-item">
+
+                           <div class="Engineers-image">
+                               <img src="images/Tetsuya Tadawebp.webp" alt=""  width="180px"  height="180px" >
+                           </div> <!-- /Engineers-image -->
+
+
+                   <div class="Engineers-icons">
+                            <a href=""><i class="fab fa-facebook-square "></i></a>  <span>Tetsuya Tada</span>
+                            <a href=""><i class="fa-brands fa-twitter"></i></i></a>  <span>60</span>
+                            <a href=""><i class="fab fa-linkedin"></i></a> <span>16 dec</span>
+                     </div> <!-- /Engineers-icons -->
+
+                           <div class="Engineers-info">
+                                 <h2 class="Engineers-info-title">iconic engineer</h2>
+
+                                 <p class="Engineers-info-p">
+                                    Tada is the mastermind and primary engineer who designed and 
+                                     developed cars highly beloved by enthusiasts, 
+                                     such as the Toyota 86 (GT86) and the new Toyota GR Supra.</p>
+
+                                 <p class="Engineers">read more</p>
+                    
+                           </div> <!-- /Engineers-info -->
+                     </div> <!-- /Engineers-item -->
+
+
+                 </div> <!-- /Engineers-parent -->
+            </div>  <!-- /Engineers-container -->
+
+
+
+
+
+
+
+<!--/////////////////////////////////// Section 12  (footer) ////////////////////////////////-->
+
+
+
+<div class="footer">
+
+            <div class="image-footer">
+                <img src="images/Logo.png" alt=""  width="250px" height="80px">
+
+
+              </div>
+
+              <div class="footer-icon">
+
+                <a href="https://www.facebook.com/TOYOTA.Global/"><i class="fab fa-facebook-square "></i></a> 
+                 <a href="https://www.instagram.com/toyota/"><i class="fab fa-instagram-square "></i></a>  
+                  <a href="https://www.linkedin.com/company/toyota"><i class="fab fa-linkedin"></i></a> 
+                  <a href="https://x.com/ToyotaMotorCorp"><i class="fa-brands fa-twitter"></i></a>
+                  <a href="https://www.youtube.com/user/TOYOTAglobal"><i class="fa-brands fa-youtube"></i></a>
+                  <a href=""><i class="fa-brands fa-google-plus-g"></i></a>
+
+
+
+              </div>
+
+
+
+
+
+
+            <span class="footer-span">
+
+                ©2026 Toyota Motor Sales, U.S.A., Inc. All information applies to U.S. vehicles only.
+
+
+            </span>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // تحميل المحفوظات من الـ Session
+    var saveBtns = document.querySelectorAll('.save-btn');
+    saveBtns.forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            var vehicleId = this.getAttribute('data-id');
+            var icon = this.querySelector('i');
+
+            fetch('/Saved/Toggle', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'RequestVerificationToken': document.querySelector('input[name="__RequestVerificationToken"]') 
+                        ? document.querySelector('input[name="__RequestVerificationToken"]').value 
+                        : ''
+                },
+                body: 'vehicleId=' + vehicleId
+            })
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+                if (data.saved) {
+                    icon.style.color = '#EB0A1E';
+                    showToast('Vehicle saved! <a href="/Saved" style="color:#fff;text-decoration:underline">View Saved</a>');
+                } else {
+                    icon.style.color = '#fff';
+                    showToast('Vehicle removed from saved.');
+                }
+            });
+        });
+    });
+});
+
+function showToast(message) {
+    var toast = document.getElementById('toast');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'toast';
+        toast.style.cssText = 'position:fixed;bottom:30px;right:30px;background:#1a1a1a;color:#fff;padding:14px 20px;border-radius:10px;font-size:14px;z-index:9999;transition:0.3s;box-shadow:0 4px 20px rgba(0,0,0,0.3)';
+        document.body.appendChild(toast);
+    }
+    toast.innerHTML = message;
+    toast.style.opacity = '1';
+    setTimeout(function() { toast.style.opacity = '0'; }, 3000);
+}
+</script>
+
+
+
+
+</body>
+</html>
+

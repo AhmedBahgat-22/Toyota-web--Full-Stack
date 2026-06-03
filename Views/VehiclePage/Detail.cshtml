@@ -1,0 +1,90 @@
+@model ToyotaProject.Models.Vehicle
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Model.Name — Toyota</title>
+    <link rel="stylesheet" href="~/css/all.css">
+    <link rel="stylesheet" href="~/css/vehicledetail.css">
+</head>
+<body>
+
+<header class="v-header">
+    <div class="v-header-inner">
+        <a href="/" class="v-logo">
+            <img src="~/images/Toyota_Icon_15.jpeg" alt="Toyota" width="36" height="28">
+            <span>TOYOTA</span>
+        </a>
+        <nav class="v-nav">
+            <a href="/VehiclePage" class="active">Vehicles</a>
+            <a href="#">Shop</a>
+            <a href="#">Support & Service</a>
+        </nav>
+        <a href="#" class="v-account">
+            <i class="fa-regular fa-circle-user"></i> Account
+        </a>
+    </div>
+</header>
+
+<div class="detail-container">
+    <a href="/VehiclePage" class="back-link">← Back to Vehicles</a>
+
+    <div class="detail-layout">
+        <div class="detail-img-box">
+            <img src="@Model.ImageUrl" alt="@Model.Name" class="detail-img">
+            @if (!string.IsNullOrEmpty(Model.Badge))
+            {
+                <span class="detail-badge">@Model.Badge</span>
+            }
+        </div>
+
+        <div class="detail-info">
+            <p class="detail-year">@Model.Year</p>
+            <h1 class="detail-name">@Model.Name</h1>
+            <p class="detail-price">
+                $@Model.StartingMSRP.ToString("N0")* Starting MSRP
+            </p>
+            <p class="detail-shown">
+                $@Model.AsShownPrice.ToString("N0") as shown *
+            </p>
+            @if (!string.IsNullOrEmpty(Model.Description))
+            {
+                <p class="detail-desc">@Model.Description</p>
+            }
+            <div class="detail-specs">
+                @if (!string.IsNullOrEmpty(Model.DriveType))
+                {
+                    <div class="spec-item">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>@Model.DriveType</span>
+                    </div>
+                }
+                @if (!string.IsNullOrEmpty(Model.Engine))
+                {
+                    <div class="spec-item">
+                        <i class="fa-solid fa-bolt"></i>
+                        <span>@Model.Engine</span>
+                    </div>
+                }
+                <div class="spec-item">
+                    <i class="fa-solid fa-tag"></i>
+                    <span>@(Model.Category?.Name ?? "Toyota")</span>
+                </div>
+            </div>
+           <div class="detail-btns">
+            <button class="btn-build" onclick="location.href='/Build/Index/@Model.Id'">Build</button>
+            <button class="btn-shop" onclick="location.href='/Shop/Checkout/@Model.Id'">Shop</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="v-footer">
+    <span>&copy;2026 Toyota Motor Sales, U.S.A., Inc.</span>
+</footer>
+</body>
+</html>

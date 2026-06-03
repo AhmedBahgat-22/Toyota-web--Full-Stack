@@ -1,0 +1,145 @@
+@model List<ToyotaProject.Models.Vehicle>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Vehicles — Toyota</title>
+    <link rel="stylesheet" href="~/css/all.css">
+    <link rel="stylesheet" href="~/css/vehicles.css">
+    <style>
+        .saved-hero { background: #1a1a1a; padding: 40px 32px; text-align: center; }
+        .saved-hero h1 { color: #fff; font-size: 36px; font-weight: 800; margin-bottom: 8px; }
+        .saved-hero p { color: #aaa; font-size: 15px; }
+        .saved-container { max-width: 1100px; margin: 40px auto; padding: 0 32px; }
+        .saved-empty { text-align: center; padding: 80px 0; }
+        .saved-empty i { font-size: 64px; color: #ddd; margin-bottom: 20px; display: block; }
+        .saved-empty h2 { font-size: 24px; color: #555; margin-bottom: 12px; }
+        .saved-empty p { color: #888; margin-bottom: 24px; }
+        .btn-browse { background: #EB0A1E; color: #fff; padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+        .saved-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .saved-card { border: 1px solid #e8e8e8; border-radius: 12px; overflow: hidden; transition: box-shadow 0.2s; }
+        .saved-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+        .saved-card-img { background: #f9f9f9; padding: 20px; text-align: center; position: relative; }
+        .saved-card-img img { width: 100%; max-height: 160px; object-fit: contain; }
+        .saved-remove { position: absolute; top: 12px; right: 12px; background: #fff; border: 1px solid #eee; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: #EB0A1E; font-size: 14px; text-decoration: none; transition: 0.2s; }
+        .saved-remove:hover { background: #fff0f0; }
+        .saved-badge { position: absolute; top: 12px; left: 12px; background: #e8eeff; color: #3355bb; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 4px; }
+        .saved-card-info { padding: 20px; }
+        .saved-card-year { font-size: 12px; font-weight: 700; color: #555; margin-bottom: 4px; }
+        .saved-card-name { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+        .saved-card-cat { font-size: 13px; color: #888; margin-bottom: 12px; }
+        .saved-card-price { font-size: 18px; font-weight: 700; color: #EB0A1E; margin-bottom: 16px; }
+        .saved-card-btns { display: flex; gap: 10px; }
+        .saved-btn-detail { flex: 1; padding: 10px; background: #000; color: #fff; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; }
+        .saved-btn-shop { flex: 1; padding: 10px; background: #fff; color: #000; border: 2px solid #000; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; }
+        .saved-btn-shop:hover { background: #f5f5f5; }
+        .saved-count { font-size: 14px; color: #888; margin-bottom: 24px; }
+    </style>
+</head>
+<body>
+
+<header class="v-header">
+    <div class="v-header-inner">
+        <a href="/" class="v-logo">
+            <img src="~/images/Toyota_Icon_15.jpeg" alt="Toyota" width="36" height="28">
+            <span>TOYOTA</span>
+        </a>
+        <nav class="v-nav">
+            <a href="/VehiclePage">Vehicles</a>
+            <a href="/Shop">Shop</a>
+            <a href="/Service">Support & Service</a>
+        </nav>
+        <a href="#" class="v-account">
+            <i class="fa-regular fa-circle-user"></i> Account
+        </a>
+    </div>
+</header>
+
+<div class="saved-hero">
+    <h1><i class="fa-solid fa-bookmark"></i> Saved Vehicles</h1>
+    <p>Your personally curated Toyota collection</p>
+</div>
+
+<div class="saved-container">
+    @if (!Model.Any())
+    {
+        <div class="saved-empty">
+            <i class="fa-regular fa-bookmark"></i>
+            <h2>No Saved Vehicles Yet</h2>
+            <p>Browse our vehicles and save the ones you love</p>
+            <a href="/VehiclePage" class="btn-browse">Browse Vehicles</a>
+        </div>
+    }
+    else
+    {
+        <p class="saved-count">@Model.Count vehicle(s) saved</p>
+        <div class="saved-grid">
+            @foreach (var v in Model)
+            {
+                <div class="saved-card">
+                    <div class="saved-card-img">
+                        @if (!string.IsNullOrEmpty(v.Badge))
+                        {
+                            <span class="saved-badge">@v.Badge</span>
+                        }
+                        <img src="@v.ImageUrl" alt="@v.Name">
+                        <button class="saved-remove" title="Remove" onclick="removeVehicle(@v.Id, this)">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                    <div class="saved-card-info">
+                        <p class="saved-card-year">@v.Year</p>
+                        <h3 class="saved-card-name">@v.Name</h3>
+                        <p class="saved-card-cat">@v.Category?.Name</p>
+                        <p class="saved-card-price">$@v.StartingMSRP.ToString("N0")* Starting MSRP</p>
+                        <div class="saved-card-btns">
+                            <a href="/VehiclePage/Detail/@v.Id" class="saved-btn-detail">View Details</a>
+                            <a href="/Shop/Checkout/@v.Id" class="saved-btn-shop">Shop</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+<footer class="v-footer">
+    <span>&copy;2026 Toyota Motor Sales, U.S.A., Inc.</span>
+</footer>
+
+
+
+
+@Html.AntiForgeryToken()
+<script>
+function removeVehicle(vehicleId, btn) {
+    var token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+    fetch('/Saved/Toggle', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'RequestVerificationToken': token
+        },
+        body: 'vehicleId=' + vehicleId
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+        var card = btn.closest('.saved-card');
+        card.style.transition = '0.3s';
+        card.style.opacity = '0';
+        setTimeout(function() {
+            card.remove();
+            var remaining = document.querySelectorAll('.saved-card').length;
+            var countEl = document.querySelector('.saved-count');
+            if (countEl) countEl.textContent = remaining + ' vehicle(s) saved';
+            if (remaining === 0) location.reload();
+        }, 300);
+    });
+}
+</script>
+</body>
+</html>

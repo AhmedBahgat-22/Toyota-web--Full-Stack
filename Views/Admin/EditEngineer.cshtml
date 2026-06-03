@@ -1,0 +1,51 @@
+@model ToyotaProject.Models.Engineer
+@{
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+    ViewData["Title"] = "Edit Engineer";
+}
+
+<a href="/Admin/Engineers" class="adm-back">← Back to Engineers</a>
+<h1 class="adm-title">Edit — @Model.Name</h1>
+
+<form method="post" action="/Admin/EditEngineer" class="adm-form">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="Id" value="@Model.Id">
+    <div class="adm-form-row">
+        <div class="adm-form-group">
+            <label>Name *</label>
+            <input type="text" name="Name" value="@Model.Name" required>
+        </div>
+        <div class="adm-form-group">
+            <label>Title</label>
+            <input type="text" name="Title" value="@Model.Title">
+        </div>
+    </div>
+    <div class="adm-form-group">
+        <label>Bio</label>
+        <textarea name="Bio" rows="4">@Model.Bio</textarea>
+    </div>
+    <div class="adm-form-group">
+        <label>Image URL</label>
+        <input type="text" name="ImageUrl" value="@Model.ImageUrl">
+    </div>
+    <div class="adm-form-row">
+        <div class="adm-form-group">
+            <label>Facebook URL</label>
+            <input type="text" name="FacebookUrl" value="@Model.FacebookUrl">
+        </div>
+        <div class="adm-form-group">
+            <label>Twitter URL</label>
+            <input type="text" name="TwitterUrl" value="@Model.TwitterUrl">
+        </div>
+    </div>
+    <div class="adm-form-group">
+        <label>LinkedIn URL</label>
+        <input type="text" name="LinkedInUrl" value="@Model.LinkedInUrl">
+    </div>
+    <div class="adm-form-actions">
+        <button type="submit" class="adm-btn-save">
+            <i class="fa-solid fa-floppy-disk"></i> Save Changes
+        </button>
+        <a href="/Admin/Engineers" class="adm-btn-cancel">Cancel</a>
+    </div>
+</form>

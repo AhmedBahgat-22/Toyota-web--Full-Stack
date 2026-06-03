@@ -1,0 +1,91 @@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Service History — Toyota</title>
+    <link rel="stylesheet" href="~/css/all.css">
+    <link rel="stylesheet" href="~/css/service.css">
+</head>
+<body>
+
+<header class="v-header">
+    <div class="v-header-inner">
+        <a href="/" class="v-logo">
+            <img src="~/images/Toyota_Icon_15.jpeg" alt="Toyota" width="36" height="28">
+            <span>TOYOTA</span>
+        </a>
+        <nav class="v-nav">
+            <a href="/VehiclePage">Vehicles</a>
+            <a href="/Shop">Shop</a>
+            <a href="/Service" class="active">Support & Service</a>
+        </nav>
+        <a href="#" class="v-account">
+            <i class="fa-regular fa-circle-user"></i> Account
+        </a>
+    </div>
+</header>
+
+<div class="service-container">
+    <a href="/Service" class="back-link">← Back to Service</a>
+    <h1 class="schedule-title">Service History</h1>
+    <p class="schedule-sub">View your complete vehicle maintenance records</p>
+
+    <div class="history-table-wrap">
+        <table class="history-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Service Type</th>
+                    <th>Vehicle</th>
+                    <th>Mileage</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Jan 15, 2026</td>
+                    <td>Oil Change & Filter</td>
+                    <td>Camry 2026</td>
+                    <td>12,450 mi</td>
+                    <td><span class="status-done">Completed</span></td>
+                </tr>
+                <tr>
+                    <td>Oct 03, 2025</td>
+                    <td>Tire Rotation</td>
+                    <td>Camry 2026</td>
+                    <td>9,200 mi</td>
+                    <td><span class="status-done">Completed</span></td>
+                </tr>
+                <tr>
+                    <td>Jul 20, 2025</td>
+                    <td>Brake Inspection</td>
+                    <td>Camry 2026</td>
+                    <td>6,100 mi</td>
+                    <td><span class="status-done">Completed</span></td>
+                </tr>
+                <tr>
+                    <td>Mar 10, 2025</td>
+                    <td>Regular Maintenance</td>
+                    <td>Camry 2026</td>
+                    <td>3,000 mi</td>
+                    <td><span class="status-done">Completed</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="history-note">
+        <i class="fa-solid fa-info-circle"></i>
+        <p>Sign in to your Toyota account to view your complete personalized service history.</p>
+        <a href="#" class="btn-signin">Sign In</a>
+    </div>
+</div>
+
+<footer class="v-footer">
+    <span>&copy;2026 Toyota Motor Sales, U.S.A., Inc.</span>
+</footer>
+</body>
+</html>

@@ -1,0 +1,143 @@
+@model ToyotaProject.Models.Vehicle
+@{
+    Layout = null;
+    var trims  = ViewBag.Trims  as List<ToyotaProject.Models.VehicleTrim>;
+    var colors = ViewBag.Colors as List<ToyotaProject.Models.VehicleColor>;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Your @Model.Year @Model.Name — Toyota</title>
+    <link rel="stylesheet" href="~/css/all.css">
+    <link rel="stylesheet" href="~/css/build.css">
+</head>
+<body>
+
+<header class="v-header">
+    <div class="v-header-inner">
+        <a href="/" class="v-logo">
+            <img src="~/images/Toyota_Icon_15.jpeg" alt="Toyota" width="36" height="28">
+            <span>TOYOTA</span>
+        </a>
+        <nav class="v-nav">
+            <a href="/VehiclePage">Vehicles</a>
+            <a href="/Shop">Shop</a>
+            <a href="/Service">Support & Service</a>
+        </nav>
+        <a href="/UserAccount" class="v-account">
+            <i class="fa-regular fa-circle-user"></i> Account
+        </a>
+    </div>
+</header>
+
+<div class="build-container">
+    <a href="/VehiclePage" class="back-link">← View All Vehicles</a>
+
+    <h1 class="build-title">Build Your @Model.Year @Model.Name</h1>
+    <p class="build-sub">
+        Select a trim and color to begin your build.
+    </p>
+
+    <!-- Car Preview -->
+    <div class="build-preview">
+        <img id="car-preview-img" src="@Model.ImageUrl" alt="@Model.Name">
+        <div class="build-color-preview" id="color-overlay"></div>
+    </div>
+
+    <!-- Color Selector -->
+    <div class="build-section">
+        <h2>Choose Your Color</h2>
+        <div class="color-grid" id="color-grid">
+            @if (colors != null)
+            {
+                @foreach (var c in colors)
+                {
+                    <div class="color-swatch @(colors.IndexOf(c) == 0 ? "active" : "")"
+                         data-color="@c.HexCode"
+                         data-name="@c.Name"
+                         onclick="selectColor(this)"
+                         title="@c.Name">
+                        <div class="color-circle" style="background:@c.HexCode"></div>
+                        <span>@c.Name</span>
+                    </div>
+                }
+            }
+        </div>
+        <p class="selected-color-name" id="selected-color-name">
+            @(colors != null && colors.Any() ? colors[0].Name : "")
+        </p>
+    </div>
+
+    <!-- Trim Selector -->
+    <div class="build-section">
+        <h2>Select Your Trim</h2>
+        <div class="trims-grid">
+            @if (trims != null)
+            {
+                @foreach (var t in trims)
+                {
+                    <div class="trim-card @(trims.IndexOf(t) == 0 ? "active" : "")"
+                         onclick="selectTrim(this, @t.Price)">
+                        <img src="@t.ImageUrl" alt="@t.Name">
+                        <div class="trim-info">
+                            <h3>@t.Name</h3>
+                            <p class="trim-fuel">
+                                <i class="fa-solid fa-bolt"></i> @t.FuelType
+                                &nbsp;|&nbsp;
+                                <i class="fa-solid fa-gauge-high"></i> @t.MPG MPG
+                            </p>
+                            <p class="trim-price">$@t.Price.ToString("N0")*</p>
+                            <p class="trim-msrp">Base MSRP</p>
+                        </div>
+                        <div class="trim-check">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="build-summary">
+        <div class="summary-left">
+            <h3>Your Build Summary</h3>
+            <p>@Model.Year @Model.Name — <span id="summary-trim">@(trims != null && trims.Any() ? trims[0].Name : "")</span></p>
+            <p class="summary-color-text">Color: <span id="summary-color">@(colors != null && colors.Any() ? colors[0].Name : "")</span></p>
+        </div>
+        <div class="summary-right">
+            <p class="summary-price-label">Starting at</p>
+            <h2 class="summary-price" id="summary-price">
+                $@(trims != null && trims.Any() ? trims[0].Price.ToString("N0") : "0")*
+            </h2>
+            <a href="/Shop/Checkout/@Model.Id" class="btn-build-shop">
+                <i class="fa-solid fa-cart-shopping"></i> Continue to Shop
+            </a>
+        </div>
+    </div>
+</div>
+
+<footer class="v-footer">
+    <span>&copy;2026 Toyota Motor Sales, U.S.A., Inc.</span>
+</footer>
+
+<script>
+function selectColor(el) {
+    document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById('selected-color-name').textContent = el.dataset.name;
+    document.getElementById('summary-color').textContent = el.dataset.name;
+}
+
+function selectTrim(el, price) {
+    document.querySelectorAll('.trim-card').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    var name = el.querySelector('h3').textContent;
+    document.getElementById('summary-trim').textContent = name;
+    document.getElementById('summary-price').textContent = '$' + Number(price).toLocaleString() + '*';
+}
+</script>
+</body>
+</html>

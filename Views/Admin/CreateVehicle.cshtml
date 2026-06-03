@@ -1,0 +1,74 @@
+@model ToyotaProject.Models.Vehicle
+@{
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+    ViewData["Title"] = "Add Vehicle";
+}
+
+<a href="/Admin/Vehicles" class="adm-back">← Back to Vehicles</a>
+<h1 class="adm-title">Add New Vehicle</h1>
+
+<form method="post" action="/Admin/CreateVehicle" class="adm-form">
+    @Html.AntiForgeryToken()
+    <div class="adm-form-row">
+        <div class="adm-form-group">
+            <label>Name *</label>
+            <input type="text" name="Name" required placeholder="e.g. Corolla Cross">
+        </div>
+        <div class="adm-form-group">
+            <label>Year *</label>
+            <input type="number" name="Year" value="2026">
+        </div>
+    </div>
+    <div class="adm-form-row">
+        <div class="adm-form-group">
+            <label>Starting MSRP ($) *</label>
+            <input type="number" name="StartingMSRP" step="0.01" placeholder="25000">
+        </div>
+        <div class="adm-form-group">
+            <label>As Shown Price ($)</label>
+            <input type="number" name="AsShownPrice" step="0.01" placeholder="30000">
+        </div>
+    </div>
+    <div class="adm-form-row">
+        <div class="adm-form-group">
+            <label>Badge</label>
+            <select name="Badge">
+                <option value="">None</option>
+                <option>Hybrid EV Available</option>
+                <option>Hybrid EV</option>
+                <option>Plug-in Hybrid EV</option>
+                <option>Battery EV</option>
+            </select>
+        </div>
+        <div class="adm-form-group">
+            <label>Category *</label>
+            <select name="CategoryId" asp-items="ViewBag.Categories" required>
+                <option value="">Select category...</option>
+            </select>
+        </div>
+    </div>
+    <div class="adm-form-group">
+        <label>Image URL</label>
+        <input type="text" name="ImageUrl" placeholder="/images/vehicle.webp">
+    </div>
+    <div class="adm-form-row">
+        <div class="adm-form-group">
+            <label>Drive Type</label>
+            <input type="text" name="DriveType" placeholder="e.g. FWD or AWD">
+        </div>
+        <div class="adm-form-group">
+            <label>Engine</label>
+            <input type="text" name="Engine" placeholder="e.g. 2.0L Dynamic Force">
+        </div>
+    </div>
+    <div class="adm-form-group">
+        <label>Description</label>
+        <textarea name="Description" rows="3" placeholder="Short description..."></textarea>
+    </div>
+    <div class="adm-form-actions">
+        <button type="submit" class="adm-btn-save">
+            <i class="fa-solid fa-floppy-disk"></i> Save Vehicle
+        </button>
+        <a href="/Admin/Vehicles" class="adm-btn-cancel">Cancel</a>
+    </div>
+</form>

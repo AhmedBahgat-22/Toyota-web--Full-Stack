@@ -1,0 +1,69 @@
+@model List<ToyotaProject.Models.Category>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicles — Toyota</title>
+    <link rel="stylesheet" href="~/css/all.css">
+    <link rel="stylesheet" href="~/css/vehicles.css">
+</head>
+<body>
+
+<header class="v-header">
+    <div class="v-header-inner">
+        <a href="/" class="v-logo">
+            <img src="~/images/Toyota_Icon_15.jpeg" alt="Toyota" width="36" height="28">
+            <span>TOYOTA</span>
+        </a>
+        <nav class="v-nav">
+            <a href="/VehiclePage" class="active">Vehicles</a>
+            <a href="/Shop">Shop</a> 
+            <a href="/Service">Support & Service</a>
+        </nav>
+        <a href="#" class="v-account">
+            <i class="fa-regular fa-circle-user"></i> Account
+        </a>
+    </div>
+</header>
+
+<div class="v-layout">
+    <aside class="v-sidebar">
+        <p class="v-sidebar-label">ALL MODELS</p>
+        <ul class="v-category-list" id="category-list">
+            <li class="v-cat-item active" data-id="0">
+                <a href="#">All Vehicles</a>
+            </li>
+            @foreach (var cat in Model)
+            {
+                <li class="v-cat-item" data-id="@cat.Id">
+                    <a href="#">@cat.Name</a>
+                </li>
+            }
+        </ul>
+        <hr class="v-sidebar-hr">
+        <ul class="v-sidebar-extra">
+            <li><a href="#">Toyota Certified Used Vehicles</a></li>
+            <li><a href="#">Go Electric With Toyota</a></li>
+            <li><a href="#">Compare</a></li>
+            <li><a href="#">All Vehicles</a></li>
+        </ul>
+    </aside>
+
+    <main class="v-main">
+        <div class="v-grid" id="vehicles-grid">
+            <div class="v-loading">Loading vehicles...</div>
+        </div>
+    </main>
+</div>
+
+<footer class="v-footer">
+    <span>&copy;2026 Toyota Motor Sales, U.S.A., Inc.</span>
+</footer>
+
+<script src="~/js/vehicles.js"></script>
+</body>
+</html>

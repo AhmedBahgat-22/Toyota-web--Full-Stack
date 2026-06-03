@@ -1,0 +1,167 @@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — Toyota</title>
+    <link rel="stylesheet" href="~/css/all.css">
+    <link rel="stylesheet" href="~/css/contact.css">
+</head>
+<body>
+
+<header class="v-header">
+    <div class="v-header-inner">
+        <a href="/" class="v-logo">
+            <img src="~/images/Toyota_Icon_15.jpeg" alt="Toyota" width="36" height="28">
+            <span>TOYOTA</span>
+        </a>
+        <nav class="v-nav">
+            <a href="/VehiclePage">Vehicles</a>
+            <a href="/Shop">Shop</a>
+            <a href="/Service">Support & Service</a>
+            <a href="/Contact" class="active">Contact</a>
+        </nav>
+        <a href="/UserAccount" class="v-account">
+            <i class="fa-regular fa-circle-user"></i> Account
+        </a>
+    </div>
+</header>
+
+<!-- Hero -->
+<div class="contact-hero">
+    <div class="contact-hero-content">
+        <h1>Contact Us</h1>
+        <p>We're here to help. Reach out to us anytime.</p>
+    </div>
+</div>
+
+<div class="contact-container">
+    <div class="contact-layout">
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <h2>Get In Touch</h2>
+            <p class="contact-info-sub">Our team is available Monday through Friday, 8AM to 8PM EST</p>
+
+            <div class="contact-info-items">
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>1-800-GO-TOYOTA</p>
+                        <p>1-800-331-4331</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>support@toyota.com</p>
+                        <p>sales@toyota.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <h4>Headquarters</h4>
+                        <p>6565 Headquarters Drive</p>
+                        <p>Plano, TX 75024</p>
+                    </div>
+                </div>
+
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <div>
+                        <h4>Business Hours</h4>
+                        <p>Mon - Fri: 8:00 AM - 8:00 PM EST</p>
+                        <p>Sat: 9:00 AM - 5:00 PM EST</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social -->
+            <div class="contact-social">
+                <h4>Follow Us</h4>
+                <div class="contact-social-icons">
+                    <a href="#"><i class="fab fa-facebook-square"></i></a>
+                    <a href="#"><i class="fab fa-instagram-square"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrap">
+            <h2>Send Us a Message</h2>
+            <p class="contact-info-sub">Fill out the form and we'll get back to you within 24 hours</p>
+
+            <form method="post" action="/Contact/Send" class="contact-form">
+                @Html.AntiForgeryToken()
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>First Name *</label>
+                        <input type="text" name="firstName" placeholder="John" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name *</label>
+                        <input type="text" name="lastName" placeholder="Doe" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" name="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" name="phone" placeholder="+1 (555) 000-0000">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Subject *</label>
+                    <select name="subject" required>
+                        <option value="">Select a subject...</option>
+                        <option>Vehicle Inquiry</option>
+                        <option>Service & Maintenance</option>
+                        <option>Parts & Accessories</option>
+                        <option>Safety Recall</option>
+                        <option>Financial Services</option>
+                        <option>General Inquiry</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Message *</label>
+                    <textarea name="message" rows="5"
+                        placeholder="How can we help you?" required></textarea>
+                </div>
+                <button type="submit" class="btn-contact-submit">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Send Message
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<footer class="v-footer">
+    <span>&copy;2026 Toyota Motor Sales, U.S.A., Inc.</span>
+</footer>
+</body>
+</html>

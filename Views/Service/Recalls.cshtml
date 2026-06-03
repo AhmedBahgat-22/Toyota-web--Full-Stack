@@ -1,0 +1,106 @@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recalls & Campaigns — Toyota</title>
+    <link rel="stylesheet" href="~/css/all.css">
+    <link rel="stylesheet" href="~/css/service.css">
+</head>
+<body>
+
+<header class="v-header">
+    <div class="v-header-inner">
+        <a href="/" class="v-logo">
+            <img src="~/images/Toyota_Icon_15.jpeg" alt="Toyota" width="36" height="28">
+            <span>TOYOTA</span>
+        </a>
+        <nav class="v-nav">
+            <a href="/VehiclePage">Vehicles</a>
+            <a href="/Shop">Shop</a>
+            <a href="/Service" class="active">Support & Service</a>
+        </nav>
+        <a href="#" class="v-account">
+            <i class="fa-regular fa-circle-user"></i> Account
+        </a>
+    </div>
+</header>
+
+<div class="service-container">
+    <a href="/Service" class="back-link">← Back to Service</a>
+    <h1 class="schedule-title">Recalls & Service Campaigns</h1>
+    <p class="schedule-sub">Check if your vehicle has any open safety recalls or service campaigns</p>
+
+    <!-- VIN Check -->
+    <div class="vin-check-box">
+        <h3><i class="fa-solid fa-magnifying-glass"></i> Check Your Vehicle</h3>
+        <p>Enter your VIN number to check for open recalls</p>
+        <div class="vin-input-row">
+            <input type="text" placeholder="Enter VIN (e.g. 1HGBH41JXMN109186)" maxlength="17" id="vinInput">
+            <button onclick="checkVin()" class="btn-check-vin">Check VIN</button>
+        </div>
+        <div id="vin-result" class="vin-result" style="display:none"></div>
+    </div>
+
+    <!-- Active Recalls -->
+    <h2 class="recalls-section-title">Active Safety Recalls</h2>
+    <div class="recalls-list">
+        <div class="recall-card recall-high">
+            <div class="recall-header">
+                <span class="recall-badge high">Safety Recall</span>
+                <span class="recall-date">Issued: March 2026</span>
+            </div>
+            <h4>Airbag Inflator Replacement</h4>
+            <p>Affected Models: Camry 2023-2024, Corolla 2023</p>
+            <p class="recall-desc">The airbag inflator may rupture under certain conditions. Free replacement available at all Toyota dealers.</p>
+            <a href="/Service/Schedule" class="btn-recall">Schedule Fix →</a>
+        </div>
+
+        <div class="recall-card recall-medium">
+            <div class="recall-header">
+                <span class="recall-badge medium">Service Campaign</span>
+                <span class="recall-date">Issued: January 2026</span>
+            </div>
+            <h4>Software Update — Infotainment System</h4>
+            <p>Affected Models: All 2025-2026 Models</p>
+            <p class="recall-desc">A software update is available to improve system stability and add new features.</p>
+            <a href="/Service/Schedule" class="btn-recall">Schedule Update →</a>
+        </div>
+
+        <div class="recall-card recall-low">
+            <div class="recall-header">
+                <span class="recall-badge low">Service Campaign</span>
+                <span class="recall-date">Issued: November 2025</span>
+            </div>
+            <h4>Fuel Pump Inspection</h4>
+            <p>Affected Models: Land Cruiser 2024-2025</p>
+            <p class="recall-desc">Inspection and possible replacement of fuel pump to prevent potential engine stalling.</p>
+            <a href="/Service/Schedule" class="btn-recall">Schedule Inspection →</a>
+        </div>
+    </div>
+</div>
+
+<footer class="v-footer">
+    <span>&copy;2026 Toyota Motor Sales, U.S.A., Inc.</span>
+</footer>
+
+<script>
+function checkVin() {
+    var vin = document.getElementById('vinInput').value.trim();
+    var result = document.getElementById('vin-result');
+    if (vin.length !== 17) {
+        result.style.display = 'block';
+        result.className = 'vin-result vin-error';
+        result.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> Please enter a valid 17-character VIN.';
+        return;
+    }
+    result.style.display = 'block';
+    result.className = 'vin-result vin-success';
+    result.innerHTML = '<i class="fa-solid fa-circle-check"></i> No open recalls found for VIN: <strong>' + vin + '</strong>';
+}
+</script>
+</body>
+</html>
+`

@@ -1,0 +1,51 @@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login — Toyota</title>
+    <link rel="stylesheet" href="~/css/all.css">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Avenir Next','Inter',sans-serif; background:#f4f4f4; display:flex; align-items:center; justify-content:center; min-height:100vh; }
+        .login-card { background:#fff; border-radius:12px; padding:48px 40px; width:380px; box-shadow:0 4px 24px rgba(0,0,0,0.1); text-align:center; }
+        .login-logo { width:50px; margin-bottom:16px; }
+        .login-card h1 { font-size:22px; font-weight:700; margin-bottom:6px; }
+        .login-card p { font-size:13px; color:#888; margin-bottom:32px; }
+        .form-group { text-align:left; margin-bottom:18px; }
+        .form-group label { display:block; font-size:13px; font-weight:600; margin-bottom:6px; color:#333; }
+        .form-group input { width:100%; padding:11px 14px; border:1.5px solid #ddd; border-radius:8px; font-size:14px; outline:none; transition:0.2s; }
+        .form-group input:focus { border-color:#EB0A1E; }
+        .btn-login { width:100%; padding:13px; background:#EB0A1E; color:#fff; border:none; border-radius:8px; font-size:16px; font-weight:700; cursor:pointer; transition:0.2s; margin-top:8px; }
+        .btn-login:hover { background:#c00; }
+        .error-msg { background:#fff0f0; color:#c00; border:1px solid #fcc; border-radius:6px; padding:10px 14px; font-size:13px; margin-bottom:18px; }
+    </style>
+</head>
+<body>
+<div class="login-card">
+    <img class="login-logo" src="~/images/Toyota_Icon_15.jpeg" alt="Toyota">
+    <h1>Admin Panel</h1>
+    <p>Sign in to manage Toyota content</p>
+
+    @if (ViewBag.Error != null)
+    {
+        <div class="error-msg">@ViewBag.Error</div>
+    }
+
+    <form method="post" action="/Account/Login">
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" name="username" placeholder="admin" required autofocus>
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="password" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn-login">Sign In</button>
+    </form>
+</div>
+</body>
+</html>

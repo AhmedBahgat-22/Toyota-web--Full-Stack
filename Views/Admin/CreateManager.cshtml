@@ -1,0 +1,32 @@
+@model ToyotaProject.Models.Manager
+@{
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+    ViewData["Title"] = "Add Manager";
+}
+
+<a href="/Admin/Managers" class="adm-back">← Back to Managers</a>
+<h1 class="adm-title">Add New Manager</h1>
+
+<form method="post" action="/Admin/CreateManager" class="adm-form">
+    @Html.AntiForgeryToken()
+    <div class="adm-form-row">
+        <div class="adm-form-group">
+            <label>Name *</label>
+            <input type="text" name="Name" required placeholder="e.g. Sakichi Toyoda">
+        </div>
+        <div class="adm-form-group">
+            <label>Role</label>
+            <input type="text" name="Role" placeholder="e.g. Parent company founder">
+        </div>
+    </div>
+    <div class="adm-form-group">
+        <label>Image URL</label>
+        <input type="text" name="ImageUrl" placeholder="/images/manager.jpg">
+    </div>
+    <div class="adm-form-actions">
+        <button type="submit" class="adm-btn-save">
+            <i class="fa-solid fa-floppy-disk"></i> Save Manager
+        </button>
+        <a href="/Admin/Managers" class="adm-btn-cancel">Cancel</a>
+    </div>
+</form>

@@ -1,0 +1,78 @@
+@model ToyotaProject.Models.Vehicle
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Confirmed — Toyota</title>
+    <link rel="stylesheet" href="~/css/all.css">
+    <link rel="stylesheet" href="~/css/shop.css">
+</head>
+<body>
+
+<header class="v-header">
+    <div class="v-header-inner">
+        <a href="/" class="v-logo">
+            <img src="~/images/Toyota_Icon_15.jpeg" alt="Toyota" width="36" height="28">
+            <span>TOYOTA</span>
+        </a>
+        <nav class="v-nav">
+            <a href="/VehiclePage">Vehicles</a>
+            <a href="/Shop" class="active">Shop</a>
+        </nav>
+        <a href="#" class="v-account">
+            <i class="fa-regular fa-circle-user"></i> Account
+        </a>
+    </div>
+</header>
+
+<div class="confirmation-container">
+    <div class="confirmation-card">
+        <div class="confirmation-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h1>Order Confirmed!</h1>
+        <p class="confirmation-sub">
+            Thank you, @TempData["OrderName"]! Your order has been successfully placed.
+        </p>
+
+        @if (Model != null)
+        {
+            <div class="confirmation-vehicle">
+                <img src="@Model.ImageUrl" alt="@Model.Name">
+                <div>
+                    <h3>@Model.Year @Model.Name</h3>
+                    <p>$@Model.StartingMSRP.ToString("N0")* Starting MSRP</p>
+                </div>
+            </div>
+        }
+
+        <div class="confirmation-steps">
+            <div class="step">
+                <i class="fa-solid fa-envelope"></i>
+                <p>Confirmation email sent</p>
+            </div>
+            <div class="step">
+                <i class="fa-solid fa-phone"></i>
+                <p>Dealer will contact you within 24 hours</p>
+            </div>
+            <div class="step">
+                <i class="fa-solid fa-car"></i>
+                <p>Vehicle delivery in 4-6 weeks</p>
+            </div>
+        </div>
+
+        <div class="confirmation-actions">
+            <a href="/" class="btn-home">Back to Home</a>
+            <a href="/Shop" class="btn-shop-more">Continue Shopping</a>
+        </div>
+    </div>
+</div>
+
+<footer class="v-footer">
+    <span>&copy;2026 Toyota Motor Sales, U.S.A., Inc.</span>
+</footer>
+</body>
+</html>

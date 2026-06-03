@@ -1,0 +1,109 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Avenir Next', 'Inter', -apple-system, sans-serif; background: #fff; }
+
+.v-header { position: sticky; top: 0; background: #fff; z-index: 100; border-bottom: 1px solid #e0e0e0; }
+.v-header-inner { display: flex; align-items: center; padding: 0 40px; height: 56px; gap: 40px; }
+.v-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: #000; font-weight: 700; font-size: 18px; }
+.v-nav { display: flex; gap: 32px; flex: 1; }
+.v-nav a { text-decoration: none; color: #333; font-size: 15px; font-weight: 500; padding-bottom: 18px; border-bottom: 3px solid transparent; transition: 0.2s; }
+.v-nav a.active, .v-nav a:hover { color: #000; border-bottom-color: #EB0A1E; }
+.v-account { text-decoration: none; color: #333; font-size: 14px; display: flex; align-items: center; gap: 6px; }
+.v-footer { text-align: center; padding: 20px; font-size: 12px; color: #888; border-top: 1px solid #e8e8e8; margin-top: 60px; }
+
+/* ── Shop Hero ─────────────────────────────────── */
+.shop-hero {
+    width: 100%;
+    height: 280px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.shop-hero-overlay { text-align: center; color: #fff; }
+.shop-hero-overlay h1 { font-size: 42px; font-weight: 800; margin-bottom: 12px; }
+.shop-hero-overlay p { font-size: 16px; color: #ccc; }
+
+/* ── Shop Grid ─────────────────────────────────── */
+.shop-container { max-width: 1200px; margin: 50px auto; padding: 0 32px; }
+.shop-section-title { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+.shop-section-sub { color: #888; font-size: 14px; margin-bottom: 32px; }
+.shop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+.shop-card { border: 1px solid #e8e8e8; border-radius: 12px; overflow: hidden; transition: box-shadow 0.2s; position: relative; }
+.shop-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+.shop-badge { position: absolute; top: 12px; left: 12px; background: #e8eeff; color: #3355bb; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 4px; z-index: 1; }
+.shop-card-img { background: #f9f9f9; padding: 20px; text-align: center; }
+.shop-card-img img { width: 100%; max-height: 180px; object-fit: contain; }
+.shop-card-info { padding: 20px; }
+.shop-card-year { font-size: 12px; font-weight: 700; color: #555; margin-bottom: 4px; }
+.shop-card-name { font-size: 22px; font-weight: 700; color: #000; margin-bottom: 4px; }
+.shop-card-category { font-size: 13px; color: #888; margin-bottom: 12px; }
+.shop-card-price { margin-bottom: 12px; }
+.shop-msrp { font-size: 20px; font-weight: 700; color: #EB0A1E; }
+.shop-msrp-label { font-size: 12px; color: #888; margin-left: 6px; }
+.shop-card-specs { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.shop-card-specs span { font-size: 12px; color: #666; display: flex; align-items: center; gap: 6px; }
+.shop-card-specs i { color: #EB0A1E; width: 14px; }
+.shop-btn-checkout { display: block; width: 100%; padding: 12px; background: #EB0A1E; color: #fff; border: none; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; text-align: center; text-decoration: none; transition: 0.2s; }
+.shop-btn-checkout:hover { background: #c00; }
+
+/* ── Checkout ──────────────────────────────────── */
+.checkout-container { max-width: 1100px; margin: 40px auto; padding: 0 32px; }
+.back-link { display: inline-block; margin-bottom: 20px; text-decoration: none; color: #555; font-size: 14px; }
+.back-link:hover { color: #EB0A1E; }
+.checkout-title { font-size: 32px; font-weight: 800; margin-bottom: 32px; }
+.checkout-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; }
+
+/* Order Summary */
+.order-summary h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+.summary-card { border: 1px solid #e8e8e8; border-radius: 12px; padding: 24px; position: relative; }
+.summary-card img { width: 100%; max-height: 160px; object-fit: contain; margin-bottom: 16px; }
+.summary-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+.summary-category { font-size: 13px; color: #888; margin-bottom: 12px; }
+.summary-spec { font-size: 13px; color: #555; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+.summary-spec i { color: #EB0A1E; }
+.summary-price { border-top: 1px solid #eee; margin-top: 16px; padding-top: 16px; }
+.price-row { display: flex; justify-content: space-between; font-size: 14px; color: #555; margin-bottom: 8px; }
+.price-row.total { font-size: 18px; font-weight: 700; color: #000; border-top: 1px solid #eee; padding-top: 12px; margin-top: 8px; }
+.secure-badges { display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
+.secure-badges span { font-size: 12px; color: #555; display: flex; align-items: center; gap: 4px; }
+.secure-badges i { color: #27ae60; }
+
+/* Payment Form */
+.payment-form h2 { font-size: 20px; font-weight: 700; margin-bottom: 24px; }
+.form-section { background: #f9f9f9; border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+.form-section h3 { font-size: 16px; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; color: #333; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: #333; }
+.form-group input { width: 100%; padding: 12px 14px; border: 1.5px solid #ddd; border-radius: 8px; font-size: 14px; outline: none; transition: 0.2s; background: #fff; }
+.form-group input:focus { border-color: #EB0A1E; }
+.card-brands { display: flex; gap: 12px; margin-bottom: 16px; }
+.card-brands i { font-size: 32px; color: #555; }
+.card-input-wrap { position: relative; }
+.card-input-wrap input { padding-left: 42px; }
+.card-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #aaa; font-size: 16px; }
+.btn-place-order { width: 100%; padding: 16px; background: #EB0A1E; color: #fff; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer; transition: 0.2s; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.btn-place-order:hover { background: #c00; }
+.checkout-note { text-align: center; font-size: 12px; color: #aaa; margin-top: 12px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+
+/* ── Order Confirmation ────────────────────────── */
+.confirmation-container { max-width: 600px; margin: 60px auto; padding: 0 32px; }
+.confirmation-card { background: #fff; border-radius: 16px; padding: 48px; text-align: center; box-shadow: 0 4px 32px rgba(0,0,0,0.08); }
+.confirmation-icon i { font-size: 72px; color: #27ae60; margin-bottom: 24px; }
+.confirmation-card h1 { font-size: 32px; font-weight: 800; margin-bottom: 12px; }
+.confirmation-sub { font-size: 16px; color: #555; margin-bottom: 32px; line-height: 1.6; }
+.confirmation-vehicle { display: flex; align-items: center; gap: 16px; background: #f9f9f9; border-radius: 12px; padding: 16px; margin-bottom: 32px; text-align: left; }
+.confirmation-vehicle img { width: 120px; height: 80px; object-fit: contain; }
+.confirmation-vehicle h3 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+.confirmation-vehicle p { font-size: 14px; color: #888; }
+.confirmation-steps { display: flex; justify-content: center; gap: 24px; margin-bottom: 32px; }
+.step { text-align: center; }
+.step i { font-size: 28px; color: #EB0A1E; margin-bottom: 8px; display: block; }
+.step p { font-size: 12px; color: #555; max-width: 100px; }
+.confirmation-actions { display: flex; gap: 16px; justify-content: center; }
+.btn-home { padding: 12px 28px; background: #000; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.2s; }
+.btn-home:hover { background: #333; }
+.btn-shop-more { padding: 12px 28px; background: #fff; color: #000; border: 2px solid #000; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.2s; }
+.btn-shop-more:hover { background: #f5f5f5; }

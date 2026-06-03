@@ -1,0 +1,69 @@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Message Sent — Toyota</title>
+    <link rel="stylesheet" href="~/css/all.css">
+    <link rel="stylesheet" href="~/css/contact.css">
+</head>
+<body>
+
+<header class="v-header">
+    <div class="v-header-inner">
+        <a href="/" class="v-logo">
+            <img src="~/images/Toyota_Icon_15.jpeg" alt="Toyota" width="36" height="28">
+            <span>TOYOTA</span>
+        </a>
+        <nav class="v-nav">
+            <a href="/VehiclePage">Vehicles</a>
+            <a href="/Shop">Shop</a>
+            <a href="/Service">Support & Service</a>
+            <a href="/Contact" class="active">Contact</a>
+        </nav>
+        <a href="/UserAccount" class="v-account">
+            <i class="fa-regular fa-circle-user"></i> Account
+        </a>
+    </div>
+</header>
+
+<div class="confirmation-container">
+    <div class="confirmation-card">
+        <div class="confirmation-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h1>Message Sent!</h1>
+        <p class="confirmation-sub">
+            Thank you, @TempData["ContactName"]!
+            Your message has been received. Our team will get back to you within 24 hours.
+        </p>
+
+        <div class="contact-next-steps">
+            <div class="next-step">
+                <i class="fa-solid fa-envelope"></i>
+                <p>Check your email for a confirmation</p>
+            </div>
+            <div class="next-step">
+                <i class="fa-solid fa-phone"></i>
+                <p>Expect a call within 24 hours</p>
+            </div>
+            <div class="next-step">
+                <i class="fa-solid fa-headset"></i>
+                <p>Call us at 1-800-331-4331 for urgent issues</p>
+            </div>
+        </div>
+
+        <div class="confirmation-actions">
+            <a href="/" class="btn-home">Back to Home</a>
+            <a href="/Contact" class="btn-shop-more">Send Another Message</a>
+        </div>
+    </div>
+</div>
+
+<footer class="v-footer">
+    <span>&copy;2026 Toyota Motor Sales, U.S.A., Inc.</span>
+</footer>
+</body>
+</html>

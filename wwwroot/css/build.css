@@ -1,0 +1,53 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Avenir Next', 'Inter', -apple-system, sans-serif; background: #fff; }
+.v-header { position: sticky; top: 0; background: #fff; z-index: 100; border-bottom: 1px solid #e0e0e0; }
+.v-header-inner { display: flex; align-items: center; padding: 0 40px; height: 56px; gap: 40px; }
+.v-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: #000; font-weight: 700; font-size: 18px; }
+.v-nav { display: flex; gap: 32px; flex: 1; }
+.v-nav a { text-decoration: none; color: #333; font-size: 15px; font-weight: 500; padding-bottom: 18px; border-bottom: 3px solid transparent; transition: 0.2s; }
+.v-nav a:hover { color: #000; border-bottom-color: #EB0A1E; }
+.v-account { text-decoration: none; color: #333; font-size: 14px; display: flex; align-items: center; gap: 6px; }
+.v-footer { text-align: center; padding: 20px; font-size: 12px; color: #888; border-top: 1px solid #e8e8e8; margin-top: 0; }
+.back-link { display: inline-block; margin-bottom: 20px; text-decoration: none; color: #555; font-size: 14px; }
+.back-link:hover { color: #EB0A1E; }
+
+.build-container { max-width: 1100px; margin: 40px auto; padding: 0 32px 60px; }
+.build-title { font-size: 36px; font-weight: 800; margin-bottom: 8px; }
+.build-sub { color: #888; font-size: 15px; margin-bottom: 32px; }
+
+.build-preview { background: #f9f9f9; border-radius: 16px; padding: 40px; text-align: center; margin-bottom: 40px; position: relative; overflow: hidden; }
+.build-preview img { max-height: 280px; object-fit: contain; width: 100%; position: relative; z-index: 1; }
+
+.build-section { margin-bottom: 48px; }
+.build-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 20px; }
+
+.color-grid { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 12px; }
+.color-swatch { display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer; padding: 8px; border-radius: 10px; border: 2px solid transparent; transition: 0.2s; }
+.color-swatch:hover { border-color: #ddd; }
+.color-swatch.active { border-color: #EB0A1E; }
+.color-circle { width: 40px; height: 40px; border-radius: 50%; border: 2px solid rgba(0,0,0,0.1); }
+.color-swatch span { font-size: 11px; color: #555; text-align: center; max-width: 70px; line-height: 1.3; }
+.selected-color-name { font-size: 14px; color: #333; font-weight: 600; }
+
+.trims-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.trim-card { border: 2px solid #e8e8e8; border-radius: 12px; overflow: hidden; cursor: pointer; transition: 0.2s; position: relative; }
+.trim-card:hover { border-color: #ccc; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+.trim-card.active { border-color: #EB0A1E; }
+.trim-card img { width: 100%; height: 160px; object-fit: contain; background: #f9f9f9; padding: 16px; }
+.trim-info { padding: 16px; }
+.trim-info h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+.trim-fuel { font-size: 12px; color: #666; margin-bottom: 8px; display: flex; align-items: center; gap: 4px; }
+.trim-fuel i { color: #EB0A1E; }
+.trim-price { font-size: 22px; font-weight: 700; color: #000; }
+.trim-msrp { font-size: 12px; color: #888; }
+.trim-check { position: absolute; top: 12px; right: 12px; color: #EB0A1E; font-size: 22px; display: none; }
+.trim-card.active .trim-check { display: block; }
+
+.build-summary { background: #1a1a1a; border-radius: 16px; padding: 32px; display: flex; justify-content: space-between; align-items: center; margin-top: 40px; }
+.summary-left h3 { font-size: 14px; color: #aaa; font-weight: 500; margin-bottom: 8px; }
+.summary-left p { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.summary-color-text { font-size: 14px; color: #aaa; }
+.summary-price-label { font-size: 13px; color: #aaa; margin-bottom: 4px; }
+.summary-price { font-size: 36px; font-weight: 800; color: #fff; margin-bottom: 16px; }
+.btn-build-shop { display: inline-flex; align-items: center; gap: 8px; background: #EB0A1E; color: #fff; padding: 14px 28px; border-radius: 30px; text-decoration: none; font-size: 16px; font-weight: 700; transition: 0.2s; }
+.btn-build-shop:hover { background: #c00; }

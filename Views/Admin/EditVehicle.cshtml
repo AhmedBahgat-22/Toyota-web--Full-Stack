@@ -1,0 +1,74 @@
+@model ToyotaProject.Models.Vehicle
+@{
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+    ViewData["Title"] = "Edit Vehicle";
+    var badge = Model.Badge ?? "";
+}
+
+<a href="/Admin/Vehicles" class="adm-back">← Back to Vehicles</a>
+<h1 class="adm-title">Edit — @Model.Name</h1>
+
+<form method="post" action="/Admin/EditVehicle" class="adm-form">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="Id" value="@Model.Id">
+    <div class="adm-form-row">
+        <div class="adm-form-group">
+            <label>Name *</label>
+            <input type="text" name="Name" value="@Model.Name" required>
+        </div>
+        <div class="adm-form-group">
+            <label>Year *</label>
+            <input type="number" name="Year" value="@Model.Year">
+        </div>
+    </div>
+    <div class="adm-form-row">
+        <div class="adm-form-group">
+            <label>Starting MSRP ($)</label>
+            <input type="number" name="StartingMSRP" step="0.01" value="@Model.StartingMSRP">
+        </div>
+        <div class="adm-form-group">
+            <label>As Shown Price ($)</label>
+            <input type="number" name="AsShownPrice" step="0.01" value="@Model.AsShownPrice">
+        </div>
+    </div>
+    <div class="adm-form-row">
+        <div class="adm-form-group">
+            <label>Badge</label>
+            <select name="Badge">
+                @Html.Raw(badge == "" ? "<option value='' selected>None</option>" : "<option value=''>None</option>")
+                @Html.Raw(badge == "Hybrid EV Available" ? "<option value='Hybrid EV Available' selected>Hybrid EV Available</option>" : "<option value='Hybrid EV Available'>Hybrid EV Available</option>")
+                @Html.Raw(badge == "Hybrid EV" ? "<option value='Hybrid EV' selected>Hybrid EV</option>" : "<option value='Hybrid EV'>Hybrid EV</option>")
+                @Html.Raw(badge == "Plug-in Hybrid EV" ? "<option value='Plug-in Hybrid EV' selected>Plug-in Hybrid EV</option>" : "<option value='Plug-in Hybrid EV'>Plug-in Hybrid EV</option>")
+                @Html.Raw(badge == "Battery EV" ? "<option value='Battery EV' selected>Battery EV</option>" : "<option value='Battery EV'>Battery EV</option>")
+            </select>
+        </div>
+        <div class="adm-form-group">
+            <label>Category *</label>
+            <select name="CategoryId" asp-items="ViewBag.Categories" required></select>
+        </div>
+    </div>
+    <div class="adm-form-group">
+        <label>Image URL</label>
+        <input type="text" name="ImageUrl" value="@Model.ImageUrl">
+    </div>
+    <div class="adm-form-row">
+        <div class="adm-form-group">
+            <label>Drive Type</label>
+            <input type="text" name="DriveType" value="@Model.DriveType">
+        </div>
+        <div class="adm-form-group">
+            <label>Engine</label>
+            <input type="text" name="Engine" value="@Model.Engine">
+        </div>
+    </div>
+    <div class="adm-form-group">
+        <label>Description</label>
+        <textarea name="Description" rows="3">@Model.Description</textarea>
+    </div>
+    <div class="adm-form-actions">
+        <button type="submit" class="adm-btn-save">
+            <i class="fa-solid fa-floppy-disk"></i> Save Changes
+        </button>
+        <a href="/Admin/Vehicles" class="adm-btn-cancel">Cancel</a>
+    </div>
+</form>

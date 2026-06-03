@@ -1,0 +1,33 @@
+@model ToyotaProject.Models.Manager
+@{
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+    ViewData["Title"] = "Edit Manager";
+}
+
+<a href="/Admin/Managers" class="adm-back">← Back to Managers</a>
+<h1 class="adm-title">Edit — @Model.Name</h1>
+
+<form method="post" action="/Admin/EditManager" class="adm-form">
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="Id" value="@Model.Id">
+    <div class="adm-form-row">
+        <div class="adm-form-group">
+            <label>Name *</label>
+            <input type="text" name="Name" value="@Model.Name" required>
+        </div>
+        <div class="adm-form-group">
+            <label>Role</label>
+            <input type="text" name="Role" value="@Model.Role">
+        </div>
+    </div>
+    <div class="adm-form-group">
+        <label>Image URL</label>
+        <input type="text" name="ImageUrl" value="@Model.ImageUrl">
+    </div>
+    <div class="adm-form-actions">
+        <button type="submit" class="adm-btn-save">
+            <i class="fa-solid fa-floppy-disk"></i> Save Changes
+        </button>
+        <a href="/Admin/Managers" class="adm-btn-cancel">Cancel</a>
+    </div>
+</form>

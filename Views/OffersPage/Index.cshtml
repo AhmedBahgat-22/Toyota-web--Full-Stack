@@ -1,0 +1,121 @@
+@model List<ToyotaProject.Models.Vehicle>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Offers — Toyota</title>
+    <link rel="stylesheet" href="~/css/all.css">
+    <link rel="stylesheet" href="~/css/offers.css">
+</head>
+<body>
+
+<header class="v-header">
+    <div class="v-header-inner">
+        <a href="/" class="v-logo">
+            <img src="~/images/Toyota_Icon_15.jpeg" alt="Toyota" width="36" height="28">
+            <span>TOYOTA</span>
+        </a>
+        <nav class="v-nav">
+            <a href="/VehiclePage">Vehicles</a>
+            <a href="/Shop" class="active">Shop</a>
+            <a href="/Service">Support & Service</a>
+        </nav>
+        <a href="/UserAccount" class="v-account">
+            <i class="fa-regular fa-circle-user"></i> Account
+        </a>
+    </div>
+</header>
+
+<!-- Hero -->
+<div class="offers-hero">
+    <div class="offers-hero-content">
+        <p class="offers-tag">Limited Time</p>
+        <h1>Special Offers</h1>
+        <p>Exclusive deals and incentives on your favorite Toyota models</p>
+    </div>
+</div>
+
+<div class="offers-container">
+
+    <!-- Offer Banners -->
+    <div class="offers-banners">
+        <div class="offer-banner red">
+            <div class="offer-banner-text">
+                <span class="offer-tag">APR Financing</span>
+                <h2>0% APR for 60 months</h2>
+                <p>On select 2026 Toyota models. Well-qualified buyers only.</p>
+                <a href="/Shop" class="btn-offer">Shop Now</a>
+            </div>
+            <div class="offer-banner-icon">
+                <i class="fa-solid fa-percent"></i>
+            </div>
+        </div>
+
+        <div class="offer-banner dark">
+            <div class="offer-banner-text">
+                <span class="offer-tag">Cash Back</span>
+                <h2>Up to $2,500 Cash Back</h2>
+                <p>On 2026 Camry and Corolla models. Limited time offer.</p>
+                <a href="/Shop" class="btn-offer">Shop Now</a>
+            </div>
+            <div class="offer-banner-icon">
+                <i class="fa-solid fa-money-bill-wave"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Vehicles with Offers -->
+    <h2 class="offers-section-title">Featured Vehicles</h2>
+    <p class="offers-section-sub">Special pricing available on these models</p>
+
+    <div class="offers-grid">
+        @foreach (var v in Model)
+        {
+            <div class="offer-vehicle-card">
+                @if (!string.IsNullOrEmpty(v.Badge))
+                {
+                    <span class="v-badge-offer">@v.Badge</span>
+                }
+                <div class="offer-vehicle-img">
+                    <img src="@v.ImageUrl" alt="@v.Name">
+                </div>
+                <div class="offer-vehicle-info">
+                    <p class="offer-vehicle-year">@v.Year</p>
+                    <h3 class="offer-vehicle-name">@v.Name</h3>
+
+                    <div class="offer-tags-row">
+                        <span class="offer-pill green">0% APR Available</span>
+                        <span class="offer-pill blue">Free Maintenance</span>
+                    </div>
+
+                    <div class="offer-price-row">
+                        <div>
+                            <p class="offer-price-label">Starting at</p>
+                            <p class="offer-price">$@v.StartingMSRP.ToString("N0")*</p>
+                        </div>
+                        <div class="offer-card-btns">
+                            <a href="/Build/Index/@v.Id" class="offer-btn-build">Build</a>
+                            <a href="/Shop/Checkout/@v.Id" class="offer-btn-shop">Shop</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Disclaimer -->
+    <p class="offers-disclaimer">
+        * MSRP excludes the Delivery, Processing and Handling Fee. Offers subject to change without notice.
+        See dealer for details. Not all buyers will qualify for financing.
+    </p>
+</div>
+
+<footer class="v-footer">
+    <span>&copy;2026 Toyota Motor Sales, U.S.A., Inc.</span>
+</footer>
+</body>
+</html>

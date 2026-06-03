@@ -1,0 +1,86 @@
+@model List<ToyotaProject.Models.Vehicle>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop — Toyota</title>
+    <link rel="stylesheet" href="~/css/all.css">
+    <link rel="stylesheet" href="~/css/shop.css">
+</head>
+<body>ّ
+
+<header class="v-header">
+    <div class="v-header-inner">
+        <a href="/" class="v-logo">
+            <img src="~/images/Toyota_Icon_15.jpeg" alt="Toyota" width="36" height="28">
+            <span>TOYOTA</span>
+        </a>
+        <nav class="v-nav">
+            <a href="/VehiclePage">Vehicles</a>
+            <a href="/Shop" class="active">Shop</a>
+            <a href="/Service">Support & Service</a>
+        </nav>
+        <a href="#" class="v-account">
+            <i class="fa-regular fa-circle-user"></i> Account
+        </a>
+    </div>
+</header>
+
+<div class="shop-hero">
+    <div class="shop-hero-overlay">
+        <h1>Find Your Toyota</h1>
+        <p>Choose your vehicle and complete your purchase securely</p>
+    </div>
+</div>
+
+<div class="shop-container">
+    <h2 class="shop-section-title">Available Vehicles</h2>
+    <p class="shop-section-sub">Select a vehicle to proceed to checkout</p>
+
+    <div class="shop-grid">
+        @foreach (var v in Model)
+        {
+            <div class="shop-card">
+                @if (!string.IsNullOrEmpty(v.Badge))
+                {
+                    <span class="shop-badge">@v.Badge</span>
+                }
+                <div class="shop-card-img">
+                    <img src="@v.ImageUrl" alt="@v.Name">
+                </div>
+                <div class="shop-card-info">
+                    <p class="shop-card-year">@v.Year</p>
+                    <h3 class="shop-card-name">@v.Name</h3>
+                    <p class="shop-card-category">@v.Category?.Name</p>
+                    <div class="shop-card-price">
+                        <span class="shop-msrp">$@v.StartingMSRP.ToString("N0")*</span>
+                        <span class="shop-msrp-label">Starting MSRP</span>
+                    </div>
+                    <div class="shop-card-specs">
+                        @if (!string.IsNullOrEmpty(v.DriveType))
+                        {
+                            <span><i class="fa-solid fa-gear"></i> @v.DriveType</span>
+                        }
+                        @if (!string.IsNullOrEmpty(v.Engine))
+                        {
+                            <span><i class="fa-solid fa-bolt"></i> @v.Engine</span>
+                        }
+                    </div>
+                    <a href="/Shop/Checkout/@v.Id" class="shop-btn-checkout">
+                        <i class="fa-solid fa-cart-shopping"></i> Buy Now
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<footer class="v-footer">
+    <span>&copy;2026 Toyota Motor Sales, U.S.A., Inc.</span>
+</footer>
+</body>
+</html>

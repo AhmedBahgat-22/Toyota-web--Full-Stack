@@ -1,0 +1,62 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Avenir Next', 'Inter', -apple-system, sans-serif; background: #fff; }
+
+.v-header { position: sticky; top: 0; background: #fff; z-index: 100; border-bottom: 1px solid #e0e0e0; }
+.v-header-inner { display: flex; align-items: center; padding: 0 40px; height: 56px; gap: 40px; }
+.v-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; color: #000; font-weight: 700; font-size: 18px; }
+.v-nav { display: flex; gap: 32px; flex: 1; }
+.v-nav a { text-decoration: none; color: #333; font-size: 15px; font-weight: 500; padding-bottom: 18px; border-bottom: 3px solid transparent; transition: 0.2s; }
+.v-nav a.active, .v-nav a:hover { color: #000; border-bottom-color: #EB0A1E; }
+.v-account { text-decoration: none; color: #333; font-size: 14px; display: flex; align-items: center; gap: 6px; }
+.v-footer { text-align: center; padding: 20px; font-size: 12px; color: #888; border-top: 1px solid #e8e8e8; margin-top: 60px; }
+
+/* ── Hero ──────────────────────────────────────── */
+.contact-hero { width: 100%; height: 250px; background: linear-gradient(135deg, #000 0%, #EB0A1E 100%); display: flex; align-items: center; justify-content: center; text-align: center; }
+.contact-hero-content h1 { font-size: 42px; font-weight: 800; color: #fff; margin-bottom: 12px; }
+.contact-hero-content p { font-size: 16px; color: rgba(255,255,255,0.8); }
+
+/* ── Contact Container ─────────────────────────── */
+.contact-container { max-width: 1100px; margin: 50px auto; padding: 0 32px; }
+.contact-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 50px; }
+
+/* ── Contact Info ──────────────────────────────── */
+.contact-info h2 { font-size: 26px; font-weight: 700; margin-bottom: 8px; }
+.contact-info-sub { font-size: 14px; color: #888; margin-bottom: 32px; line-height: 1.6; }
+.contact-info-items { display: flex; flex-direction: column; gap: 24px; margin-bottom: 32px; }
+.contact-info-item { display: flex; gap: 16px; align-items: flex-start; }
+.contact-info-icon { width: 44px; height: 44px; background: #fff0f0; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.contact-info-icon i { font-size: 18px; color: #EB0A1E; }
+.contact-info-item h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; color: #000; }
+.contact-info-item p { font-size: 13px; color: #666; margin-bottom: 2px; }
+.contact-social h4 { font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+.contact-social-icons { display: flex; gap: 12px; }
+.contact-social-icons a { width: 40px; height: 40px; background: #f5f5f5; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #333; font-size: 18px; transition: 0.2s; }
+.contact-social-icons a:hover { background: #EB0A1E; color: #fff; }
+
+/* ── Contact Form ──────────────────────────────── */
+.contact-form-wrap h2 { font-size: 26px; font-weight: 700; margin-bottom: 8px; }
+.contact-form { margin-top: 24px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; color: #333; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 14px; border: 1.5px solid #ddd; border-radius: 8px; font-size: 14px; outline: none; transition: 0.2s; background: #fff; font-family: inherit; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #EB0A1E; }
+.form-group textarea { resize: vertical; }
+.btn-contact-submit { width: 100%; padding: 16px; background: #EB0A1E; color: #fff; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer; transition: 0.2s; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.btn-contact-submit:hover { background: #c00; }
+
+/* ── Confirmation ──────────────────────────────── */
+.confirmation-container { max-width: 600px; margin: 60px auto; padding: 0 32px; }
+.confirmation-card { background: #fff; border-radius: 16px; padding: 48px; text-align: center; box-shadow: 0 4px 32px rgba(0,0,0,0.08); }
+.confirmation-icon i { font-size: 72px; color: #27ae60; margin-bottom: 24px; display: block; }
+.confirmation-card h1 { font-size: 32px; font-weight: 800; margin-bottom: 12px; }
+.confirmation-sub { font-size: 15px; color: #555; margin-bottom: 32px; line-height: 1.6; }
+.contact-next-steps { display: flex; justify-content: center; gap: 24px; margin-bottom: 32px; flex-wrap: wrap; }
+.next-step { text-align: center; max-width: 140px; }
+.next-step i { font-size: 28px; color: #EB0A1E; margin-bottom: 8px; display: block; }
+.next-step p { font-size: 12px; color: #555; line-height: 1.5; }
+.confirmation-actions { display: flex; gap: 16px; justify-content: center; }
+.btn-home { padding: 12px 28px; background: #000; color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.2s; }
+.btn-home:hover { background: #333; }
+.btn-shop-more { padding: 12px 28px; background: #fff; color: #000; border: 2px solid #000; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.2s; }
+.btn-shop-more:hover { background: #f5f5f5; }
