@@ -1,85 +1,315 @@
 # 🚗 Toyota Full-Stack Web Application
 
-![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?style=for-the-badge&logo=dotnet)
-![ASP.NET Core](https://img.shields.io/badge/ASP.NET_MVC-10.0-0089D6?style=for-the-badge&logo=dotnet)
-![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite)
-![Bootstrap](https://img.shields.io/badge/Bootstrap_5-563D7C?style=for-the-badge&logo=bootstrap)
-![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker)
+A professional full-stack web application inspired by the official Toyota website, developed using **ASP.NET Core MVC**, **Entity Framework Core**, and **SQLite**.
 
-## 📖 Project Overview
-This project is a comprehensive, fully functional, database-driven web application for Toyota Motor Corporation. Originally starting as a static HTML/CSS layout, it has been architected into a robust full-stack solution using **ASP.NET Core MVC**. 
-
-The application demonstrates practical and advanced implementations of modern backend architecture, RESTful API design, database relationship management using Entity Framework Core, and session-based authentication. 
-
-🔗 **[View Live Demo Here](https://toyota-demo-app.onrender.com)**
+This project started as a static HTML/CSS website and evolved into a complete database-driven web application featuring dynamic content management, RESTful APIs, authentication, session management, administrative dashboards, and modern MVC architecture.
 
 ---
 
-## 🏗️ Architecture & Core Concepts
-The application strictly adheres to the **MVC (Model-View-Controller)** design pattern, ensuring a clean separation of concerns and highly maintainable code:
-*   **Controllers:** 14 dedicated controllers handling diverse business logic, routing, and HTTP request management.
-*   **Models & Data:** 7 primary database models utilizing data annotations (`[Required]`, `[MaxLength]`) for robust backend validation.
-*   **Views:** Over 25 dynamic Razor pages (`.cshtml`) offering a highly interactive and data-driven user experience.
-*   **Dependency Injection:** Extensively used for DbContext and service management across the entire application lifecycle.
+# 📖 Project Overview
+
+The Toyota Full-Stack Web Application was built to demonstrate the practical implementation of modern web development concepts using Microsoft's ASP.NET Core ecosystem.
+
+The application simulates a real-world automotive platform where users can:
+
+* Browse Toyota vehicles
+* View detailed vehicle information
+* Build and customize vehicles
+* Explore special offers
+* Schedule vehicle service appointments
+* Save favorite vehicles
+* Manage personal accounts
+* Complete vehicle purchases through a checkout process
+
+In addition, the system includes a fully functional administration panel allowing administrators to manage all website content through CRUD operations.
 
 ---
 
-## ✨ Deep Dive into Features
+# ✨ Key Features
 
-### 👤 User Interface (Client-Side)
-*   **Dynamic Showroom & Filtering:** Browse vehicles with real-time JavaScript (Fetch API) filtering based on categories (e.g., Sedans, SUVs, Trucks) asynchronously, without page reloads.
-*   **Build & Price Tool:** Interactive configurator allowing users to select vehicle trims, toggle color swatches, and see live price updates dynamically.
-*   **Service & Support Portal:** Includes appointment scheduling forms, viewing service history, and an active recall checker utilizing the vehicle's VIN.
-*   **Shopping Cart & Checkout:** Complete e-commerce flow for vehicle reservation, integrating special offers and user data collection.
-*   **Saved Vehicles:** Session-based storage allowing users to save and toggle their favorite vehicles across different browsing sessions.
+## 🚘 Vehicle Management
 
-### 🛡️ Admin Control Panel (Backend)
-*   **Session-Based Authentication:** Secure login system explicitly built with custom Action Filters (`[AdminAuthFilter]`) to protect administrative routes and prevent unauthorized access.
-*   **Content Management System (CMS):** Full CRUD (Create, Read, Update, Delete) capabilities to manage the website's dynamic data.
-*   **Entity Management:** Control panel to seamlessly add, edit, or remove Vehicles, Engineers, and Managers directly from the database.
+* Dynamic vehicle catalog
+* Vehicle categories and filtering
+* Vehicle detail pages
+* Trim selection
+* Color customization
+* Live pricing updates
+* Vehicle specifications and descriptions
+
+## 🛒 Shopping Experience
+
+* Vehicle shopping page
+* Checkout workflow
+* Order placement system
+* Order confirmation page
+* Promotional offers integration
+
+## 🔧 Service & Support
+
+* Service center page
+* Service appointment scheduling
+* Vehicle service history
+* Recall information checker
+* Customer support contact forms
+
+## 👤 User Features
+
+* User registration
+* User login/logout
+* Session-based authentication
+* User dashboard
+* Saved vehicles system
+
+## 🛡️ Administration Panel
+
+* Secure admin login
+* Session-protected dashboard
+* Vehicle management (Create, Read, Update, Delete)
+* Engineer management
+* Manager management
+* Content administration
+
+## 🔌 REST API
+
+A complete RESTful API layer powers the application and provides JSON data for frontend interactions.
+
+Available endpoints include:
+
+```http
+GET    /api/vehicles
+GET    /api/categories
+GET    /api/engineers
+GET    /api/managers
+GET    /api/offers
+
+POST   /api/vehicles
+PUT    /api/vehicles/{id}
+DELETE /api/vehicles/{id}
+```
 
 ---
 
-## 💻 Technology Stack
+# 🏗️ Architecture
 
-**Backend:**
-*   C# 13.0
-*   ASP.NET Core MVC (.NET 10.0)
-*   RESTful API (5 dedicated API controllers returning standard HTTP status codes and JSON payloads)
+The application follows the ASP.NET Core MVC architecture pattern.
 
-**Database & ORM:**
-*   SQLite (Lightweight, file-based relational database)
-*   Entity Framework Core (Code-First approach with automated Migrations)
-*   LINQ (Complex data querying and manipulation)
+## Models
 
-**Frontend:**
-*   HTML5 & CSS3 (Custom responsive styling and layout algorithms)
-*   JavaScript (Vanilla ES6+ for dynamic DOM manipulation)
-*   Font Awesome 6 (Vector iconography)
+Database entities include:
 
-**Deployment:**
-*   Docker (Containerization via custom Dockerfile)
-*   Render (Cloud hosting environment)
+* Vehicle
+* Category
+* Engineer
+* Manager
+* Offer
+* VehicleTrim
+* VehicleColor
+* AdminUser
+
+## Views
+
+More than 25 Razor Views were developed to provide a complete user experience.
+
+## Controllers
+
+The project contains 14 controllers responsible for:
+
+* Page rendering
+* Business logic
+* API responses
+* Authentication
+* Data management
 
 ---
 
-## 🗄️ Database Schema
-The relational database is carefully normalized and consists of 9 tables:
-*   **Vehicles:** The core entity, containing StartingMSRP, specs, and relationships.
-*   **Categories:** One-to-Many relationship with Vehicles.
-*   **VehicleTrims & VehicleColors:** Foreign keys linked directly to specific Vehicles.
-*   **Engineers, Managers, Offers:** Independent entities populated on the frontend for dynamic content rendering.
-*   **AdminUsers:** Secured credential storage for dashboard access.
+# 🗄️ Database Design
+
+The application uses SQLite as its relational database.
+
+Tables include:
+
+* Categories
+* Vehicles
+* Engineers
+* Managers
+* Offers
+* VehicleTrims
+* VehicleColors
+* AdminUsers
+* EF Migration History
+
+Entity Framework Core handles:
+
+* Database creation
+* Schema migrations
+* Relationships
+* CRUD operations
+* LINQ queries
+
+The database is automatically initialized and seeded with sample data during application startup.
 
 ---
 
-## 🚀 How to Run Locally
+# ⚙️ Technologies Used
 
-If you wish to run this project on your local machine, run the following commands sequentially in your terminal:
+| Technology            | Purpose                           |
+| --------------------- | --------------------------------- |
+| ASP.NET Core MVC      | Web Application Framework         |
+| C#                    | Backend Development               |
+| Entity Framework Core | ORM & Database Access             |
+| SQLite                | Relational Database               |
+| Razor Views           | Server-Side Rendering             |
+| HTML5                 | Markup Structure                  |
+| CSS3                  | Styling & Layout                  |
+| JavaScript (ES6+)     | Client-Side Interactivity         |
+| Fetch API             | AJAX Data Requests                |
+| Font Awesome          | Icons                             |
+| Session Storage       | Authentication & State Management |
+
+---
+
+# 🧠 Software Engineering Concepts Applied
+
+This project demonstrates practical implementation of:
+
+* Object-Oriented Programming (OOP)
+* MVC Design Pattern
+* Dependency Injection (DI)
+* Repository-style Data Access through EF Core
+* RESTful API Design
+* Authentication & Authorization
+* Session Management
+* Database Relationships
+* LINQ Querying
+* CRUD Operations
+* Middleware Configuration
+* Routing & Model Binding
+* Data Validation
+* Async/Await Programming
+
+---
+
+# 🔐 Authentication System
+
+The project includes a custom session-based authentication system.
+
+### Admin Authentication
+
+Protected routes are secured using:
+
+* Custom AdminAuthFilter
+* Session Validation
+* Login Redirection
+* Secure Dashboard Access
+
+Admin users can manage:
+
+* Vehicles
+* Engineers
+* Managers
+* Website Content
+
+---
+
+# 📂 Project Structure
+
+```text
+ToyotaProject
+│
+├── Controllers
+├── Models
+├── Views
+├── Data
+├── Filters
+├── wwwroot
+│   ├── css
+│   ├── js
+│   └── images
+│
+├── Program.cs
+├── appsettings.json
+└── toyota.db
+```
+
+---
+
+# 🚀 Getting Started
+
+## Clone Repository
 
 ```bash
-git clone [https://github.com/AhmedBahgat-22/Toyota-web--Full-Stack.git](https://github.com/AhmedBahgat-22/Toyota-web--Full-Stack.git)
-cd Toyota-web--Full-Stack
+git clone https://github.com/your-username/ToyotaProject.git
+```
+
+## Navigate to Project
+
+```bash
+cd ToyotaProject
+```
+
+## Restore Packages
+
+```bash
 dotnet restore
+```
+
+## Apply Migrations
+
+```bash
 dotnet ef database update
+```
+
+## Run Application
+
+```bash
 dotnet run
+```
+
+Open your browser:
+
+```text
+http://localhost:5113
+```
+
+---
+
+# 📊 Project Statistics
+
+* 14 Controllers
+* 8 Database Models
+* 25+ Razor Views
+* 5 REST API Controllers
+* 9 Database Tables
+* Full CRUD Administration Panel
+* Session-Based Authentication
+* Dynamic Frontend Interactions
+* Entity Framework Core Integration
+* SQLite Database Support
+
+---
+
+# 🎯 Learning Outcomes
+
+Through this project, the following skills were practiced and strengthened:
+
+* Full-Stack Web Development
+* ASP.NET Core MVC
+* C# Programming
+* Entity Framework Core
+* Database Design
+* REST API Development
+* Authentication Systems
+* Software Architecture
+* Frontend & Backend Integration
+* Professional Project Organization
+
+---
+
+# 🏁 Conclusion
+
+This project successfully transforms a static Toyota website into a complete enterprise-style web application.
+
+By combining modern ASP.NET Core development practices with database integration, REST APIs, authentication, administrative tools, and dynamic frontend functionality, the application demonstrates a comprehensive understanding of full-stack software development principles.
+
+The result is a scalable, maintainable, and professional web application that reflects real-world industry practices and showcases advanced web development capabilities.
